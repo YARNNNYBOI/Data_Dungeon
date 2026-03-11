@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b73bd1c7ljujf"]
 
 [ext_resource type="Script" uid="uid://bej0qw0r387rq" path="res://items/potion.gd" id="1_c4fup"]
-[ext_resource type="Texture2D" uid="uid://b0o06ddh41bnp" path="res://icon.svg" id="2_qp6ph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp6ph"]
 size = Vector2(14, 14)
@@ -10,8 +9,7 @@ size = Vector2(14, 14)
 script = ExtResource("1_c4fup")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=708634586]
-scale = Vector2(0.109375, 0.109375)
-texture = ExtResource("2_qp6ph")
+texture_filter = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1043948117]
 

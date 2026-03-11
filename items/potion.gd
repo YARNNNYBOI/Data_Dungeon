@@ -12,4 +12,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		else:
 			GlobalScript.health += health_gain
 		GlobalScript.speed += speed_gain
+		print("speed ", GlobalScript.speed, ",health ", GlobalScript.health)
 	queue_free()

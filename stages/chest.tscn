@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://jtm5sj2n8s0m"]
 
 [ext_resource type="Script" uid="uid://b8paniuxd0bbn" path="res://chest.gd" id="1_gp17e"]
-[ext_resource type="PackedScene" uid="uid://diapvqcogtyss" path="res://items/artifacts/artifact_1.tscn" id="2_gndn3"]
 [ext_resource type="Texture2D" uid="uid://mn6sgeei7x2n" path="res://stages/tilesets/chest_close.png" id="2_gp17e"]
+[ext_resource type="Script" uid="uid://84i1e4o6ft7d" path="res://items/artifacts/artifact_1.gd" id="2_nhnst"]
+[ext_resource type="Texture2D" uid="uid://0f7fnqkosjbb" path="res://items/artifacts/artifact1.png" id="3_xvhrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjx8v"]
+size = Vector2(26, 28)
+
+[sub_resource type="PackedScene" id="PackedScene_ypg8g"]
+_bundled = {
+"conn_count": 2,
+"conns": PackedInt32Array(1073741830, 1073741829, 30, 29, 2, 0, 0, 1073741832, 1073741831, 32, 31, 2, 0, 0),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("artifact", "Node2D", "script", "item_name", "Sprite2D", "Sprite2D", "texture_filter", "texture", "Area2D", "Area2D", "CollisionShape2D", "CollisionShape2D", "shape", "Control", "Control", "texture_filter", "layout_mode", "anchors_preset", "offset_left", "offset_top", "offset_right", "offset_bottom", "Label", "Label", "layout_mode", "offset_top", "offset_right", "offset_bottom", "text", "_on_area_2d_body_entered", "body_entered", "_on_area_2d_body_exited", "body_exited"),
+"node_count": 6,
+"node_ids": PackedInt32Array(966135498, 1626610207, 1565289909, 1556356162, 401782616, 558643300),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./Area2D"), NodePath("."), NodePath("./Control"), NodePath("."), NodePath("Area2D"), NodePath("."), NodePath("Area2D")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 2, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 0, 0, 1073741826, 0, 11, 10, -1, 1, 12, 4, 0, 1073741827, 0, 14, 13, -1, 7, 15, 5, 16, 6, 17, 7, 18, 8, 19, 9, 20, 10, 21, 11, 0, 1073741828, 0, 23, 22, -1, 5, 24, 12, 25, 13, 26, 14, 27, 15, 28, 16, 0),
+"variants": [ExtResource("2_nhnst"), "artifact_1", 1, ExtResource("3_xvhrh"), SubResource("RectangleShape2D_jjx8v"), 1, 3, 0, -5.0, -8.0, 35.0, 32.0, 0, -24.0, 40.0, -1.0, "E"],
+"version": 3
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhnst"]
 size = Vector2(32, 32)
@@ -10,7 +29,7 @@ size = Vector2(32, 32)
 [node name="Chest" type="Area2D" unique_id=1775483302]
 z_index = -2
 script = ExtResource("1_gp17e")
-item = ExtResource("2_gndn3")
+item = SubResource("PackedScene_ypg8g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1434317629]
 texture_filter = 1

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bufkmecrlvpwr" path="res://stages/tilesets/stage3/third_stage_strating_pathway_1.png" id="4_2i156"]
 [ext_resource type="PackedScene" uid="uid://jtm5sj2n8s0m" path="res://stages/chest.tscn" id="6_sg1oo"]
 [ext_resource type="PackedScene" uid="uid://c73jsyqm7me3r" path="res://stages/barriers.tscn" id="7_2i156"]
+[ext_resource type="Texture2D" uid="uid://bcpdgkeukw8sn" path="res://items/artifacts/artifact3.png" id="7_8ek1h"]
 [ext_resource type="PackedScene" uid="uid://bvil6hkchwhbe" path="res://character/enemy.tscn" id="8_2i156"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ek1h"]
@@ -257,6 +258,10 @@ shape = SubResource("RectangleShape2D_ygorx")
 [node name="Chest" parent="." unique_id=1775483302 instance=ExtResource("6_sg1oo")]
 position = Vector2(1000, 608)
 artifact_name = "Artifact_3"
+artifact_texture = ExtResource("7_8ek1h")
+quanorquan = "quan"
+title_text = "Statistical Compass"
+description_text = "A tool used to analyze relationships between variables and identify patterns using statistical models."
 
 [node name="Barriers1" parent="." unique_id=1107646465 instance=ExtResource("7_2i156")]
 position = Vector2(328, 509)

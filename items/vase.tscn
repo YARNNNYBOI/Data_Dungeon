@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dwpgjbthuciou" path="res://items/vase.gd" id="1_oltn7"]
 [ext_resource type="PackedScene" uid="uid://b73bd1c7ljujf" path="res://items/potion.tscn" id="2_4c44a"]
-[ext_resource type="Texture2D" uid="uid://b0o06ddh41bnp" path="res://icon.svg" id="2_5aovi"]
+[ext_resource type="Texture2D" uid="uid://bweph0o060hmo" path="res://items/vase.png" id="3_5aovi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4c44a"]
 size = Vector2(92, 92)
@@ -15,9 +15,9 @@ script = ExtResource("1_oltn7")
 item = ExtResource("2_4c44a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2147398002]
+z_index = -1
 texture_filter = 1
-scale = Vector2(0.12, 0.12)
-texture = ExtResource("2_5aovi")
+texture = ExtResource("3_5aovi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520360090]
 position = Vector2(5.9604645e-08, 0)

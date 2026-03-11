@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dcb34m2ao1td3"]
 
 [ext_resource type="Script" uid="uid://2up0l8crjdvp" path="res://weapon/weapon.gd" id="1_4ht74"]
-[ext_resource type="Texture2D" uid="uid://daa7eyhpydfqx" path="res://weapon/sprites/picaxe(16x16).png" id="2_q8tx2"]
+[ext_resource type="Texture2D" uid="uid://b48i6ruel4bty" path="res://weapon/sprites/Scythe.png" id="2_q8tx2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8tx2"]
 size = Vector2(233, 178.75)
@@ -22,10 +22,10 @@ one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2129086201]
 texture_filter = 1
-position = Vector2(1, 72)
-scale = Vector2(10, 10)
+position = Vector2(24, 58.999992)
+scale = Vector2(5, 5)
 texture = ExtResource("2_q8tx2")
-offset = Vector2(5.3999996, -5.4)
+offset = Vector2(15.685713, -15.828569)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -4,7 +4,6 @@ extends Control
 
 
 func _on_start_pressed() -> void:
-	print("hello")
 	get_tree().change_scene_to_file("res://stages/character_select.tscn")
 
 

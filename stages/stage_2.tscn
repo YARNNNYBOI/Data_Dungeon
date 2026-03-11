@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bceyvrenqbi0h" path="res://stages/tilesets/stage2/second_stage_portal_room.png" id="5_evnfx"]
 [ext_resource type="Texture2D" uid="uid://ch46adxx3ufpg" path="res://stages/tilesets/stage2/second_stage_starting_room.png" id="6_l444g"]
 [ext_resource type="PackedScene" uid="uid://jtm5sj2n8s0m" path="res://stages/chest.tscn" id="8_013ri"]
+[ext_resource type="Texture2D" uid="uid://3ugeh71jhsqy" path="res://items/artifacts/artifact2.png" id="9_l444g"]
 [ext_resource type="PackedScene" uid="uid://c73jsyqm7me3r" path="res://stages/barriers.tscn" id="9_mghc5"]
 [ext_resource type="PackedScene" uid="uid://bvil6hkchwhbe" path="res://character/enemy.tscn" id="10_evnfx"]
+[ext_resource type="PackedScene" uid="uid://wm8bjt6ey0p1" path="res://items/vase.tscn" id="12_b423g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b423g"]
 texture = ExtResource("2_85jxm")
@@ -471,6 +473,10 @@ position = Vector2(176, 56)
 position = Vector2(904, -264)
 artifact_name = "Artifact_2"
 artifact_position = Vector2(904, -240)
+artifact_texture = ExtResource("9_l444g")
+quanorquan = "quan"
+title_text = "Hypothesis Testing Relic"
+description_text = "A research artifact used to test hypotheses through statistical analysis and empirical data"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=170948968]
 
@@ -533,6 +539,18 @@ room_group = "2"
 [node name="enemy3" parent="." unique_id=1817082378 instance=ExtResource("10_evnfx")]
 position = Vector2(927, -231)
 room_group = "3"
+
+[node name="vase" parent="." unique_id=1240479490 instance=ExtResource("12_b423g")]
+position = Vector2(616, 9)
+
+[node name="vase2" parent="." unique_id=1798868033 instance=ExtResource("12_b423g")]
+position = Vector2(488, -313)
+
+[node name="vase3" parent="." unique_id=919779774 instance=ExtResource("12_b423g")]
+position = Vector2(952, -327)
+
+[node name="vase4" parent="." unique_id=1523215386 instance=ExtResource("12_b423g")]
+position = Vector2(856, -328)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="room1" to="." method="_on_room_1_body_entered"]
