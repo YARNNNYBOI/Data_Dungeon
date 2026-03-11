@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://b24iqjtvgvns3"]
+
+[ext_resource type="Texture2D" uid="uid://bow1jrs3swd2c" path="res://character/player_spriite/Castro.png" id="1_5doxx"]
+[ext_resource type="Texture2D" uid="uid://dp5r6ny31mir5" path="res://character/player_spriite/Castro_left.png" id="2_nk40b"]
+[ext_resource type="Texture2D" uid="uid://bve6ayuiganr1" path="res://character/player_spriite/Castro_right.png" id="3_svf1y"]
+[ext_resource type="Texture2D" uid="uid://cx0vwtx1kwdr" path="res://character/player_spriite/Castro_up.png" id="4_edrdu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aypkh"]
+atlas = ExtResource("1_5doxx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhoun"]
+atlas = ExtResource("1_5doxx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdyh8"]
+atlas = ExtResource("1_5doxx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe16m"]
+atlas = ExtResource("1_5doxx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw6nv"]
+atlas = ExtResource("2_nk40b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpic6"]
+atlas = ExtResource("2_nk40b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6pse"]
+atlas = ExtResource("2_nk40b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6sb3"]
+atlas = ExtResource("2_nk40b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn1kw"]
+atlas = ExtResource("3_svf1y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps75u"]
+atlas = ExtResource("3_svf1y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u2u7"]
+atlas = ExtResource("3_svf1y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j51ly"]
+atlas = ExtResource("3_svf1y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqqx8"]
+atlas = ExtResource("4_edrdu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1kp2"]
+atlas = ExtResource("4_edrdu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw5rd"]
+atlas = ExtResource("4_edrdu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t461u"]
+atlas = ExtResource("4_edrdu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkowc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aypkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhoun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdyh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe16m")
+}],
+"loop": true,
+"name": &"walking_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw6nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpic6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6pse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6sb3")
+}],
+"loop": true,
+"name": &"walking_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn1kw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps75u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u2u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j51ly")
+}],
+"loop": true,
+"name": &"walking_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqqx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1kp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw5rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t461u")
+}],
+"loop": true,
+"name": &"walking_up",
+"speed": 5.0
+}]
+
+[node name="jm" type="AnimatedSprite2D" unique_id=1980761680]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_dkowc")
+animation = &"walking_up"
+frame_progress = 0.6171445

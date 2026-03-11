@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://jtm5sj2n8s0m"]
+
+[ext_resource type="Script" uid="uid://b8paniuxd0bbn" path="res://chest.gd" id="1_gp17e"]
+[ext_resource type="PackedScene" uid="uid://diapvqcogtyss" path="res://items/artifacts/artifact_1.tscn" id="2_gndn3"]
+[ext_resource type="Texture2D" uid="uid://mn6sgeei7x2n" path="res://stages/tilesets/chest_close.png" id="2_gp17e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhnst"]
+size = Vector2(32, 32)
+
+[node name="Chest" type="Area2D" unique_id=1775483302]
+z_index = -2
+script = ExtResource("1_gp17e")
+item = ExtResource("2_gndn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1434317629]
+texture_filter = 1
+texture = ExtResource("2_gp17e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1709816993]
+shape = SubResource("RectangleShape2D_nhnst")
+
+[node name="Control" type="Control" parent="." unique_id=1530241321]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 11.0
+offset_top = -11.0
+offset_right = 51.0
+offset_bottom = 29.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1915451140]
+texture_filter = 1
+layout_mode = 0
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = -1.0
+text = "E"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

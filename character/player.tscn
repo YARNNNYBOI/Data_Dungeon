@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://c654x1snb080c"]
+
+[ext_resource type="Script" uid="uid://ppjhsa343yb" path="res://character/player.gd" id="2_aypkh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aypkh"]
+radius = 64.9038
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhoun"]
+radius = 100.00001
+
+[node name="player" type="CharacterBody2D" unique_id=1556820961 groups=["players"]]
+rotation = 0.00440013
+scale = Vector2(0.1, 0.1)
+script = ExtResource("2_aypkh")
+strenght_amount = 200
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=17840541]
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("CircleShape2D_aypkh")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=775252088]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1849998942]
+position = Vector2(-1.5258789e-05, 4.7683716e-07)
+shape = SubResource("CircleShape2D_hhoun")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=831984285]
+zoom = Vector2(5, 5)
+
+[node name="Timer" type="Timer" parent="." unique_id=733964008]
+one_shot = true
+
+[node name="color_timer" type="Timer" parent="." unique_id=1953613385]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=196465068]
+
+[node name="Death Screen" type="Control" parent="CanvasLayer" unique_id=722250785]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Death Screen" unique_id=2013556885]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 102.0
+offset_right = 1098.0
+offset_bottom = 329.0
+theme_override_font_sizes/font_size = 122
+text = "YOU HAVE FAILED"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Death Screen" unique_id=283718046]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 367.0
+offset_right = 785.0
+offset_bottom = 577.0
+theme_override_font_sizes/font_size = 147
+text = "RETRY"
+
+[node name="GUI" type="Control" parent="CanvasLayer" unique_id=811038320]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="health" type="ProgressBar" parent="CanvasLayer/GUI" unique_id=1615335974]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 212.0
+offset_bottom = 42.0
+show_percentage = false
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/GUI" unique_id=1829859381]
+modulate = Color(1, 1, 0.26666668, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 56.0
+offset_right = 172.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+show_percentage = false
+
+[node name="Info_Screen" type="Control" parent="CanvasLayer" unique_id=1797905305]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Info_Screen" unique_id=1265636929]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_right = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(18.892157, 18.892157, 18.892157, 0.92156863)
+
+[node name="description" type="Label" parent="CanvasLayer/Info_Screen/ColorRect" unique_id=977882553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 228.0
+offset_top = 38.0
+offset_right = -247.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "asdsadasdsad"
+
+[node name="Button1" type="Button" parent="CanvasLayer/Info_Screen" unique_id=1458968115]
+layout_mode = 0
+offset_left = 993.0
+offset_top = 15.0
+offset_right = 1057.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="Inventory" type="Control" parent="CanvasLayer" unique_id=2046232754]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Inventory" unique_id=1899263434]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = 184.0
+offset_right = -77.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(18.892157, 18.892157, 18.892157, 0.5176471)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Inventory" unique_id=671864685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 224.0
+offset_top = 304.0
+offset_right = -224.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Inventory" unique_id=1412649293]
+layout_mode = 0
+offset_left = 979.0
+offset_top = 194.0
+offset_right = 1051.0
+offset_bottom = 267.0
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="weapon_timer" type="Timer" parent="." unique_id=1377669653]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="color_timer" to="." method="_on_color_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Death Screen/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Info_Screen/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Inventory/Button" to="." method="_on_button_pressed"]

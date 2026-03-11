@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dcb34m2ao1td3"]
+
+[ext_resource type="Script" uid="uid://2up0l8crjdvp" path="res://weapon/weapon.gd" id="1_4ht74"]
+[ext_resource type="Texture2D" uid="uid://daa7eyhpydfqx" path="res://weapon/sprites/picaxe(16x16).png" id="2_q8tx2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8tx2"]
+size = Vector2(233, 178.75)
+
+[node name="weapon" type="Node2D" unique_id=531249697]
+script = ExtResource("1_4ht74")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=864400321]
+position = Vector2(-1, 1)
+rotation = -1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=727622027]
+position = Vector2(0.49999762, 89.625)
+shape = SubResource("RectangleShape2D_q8tx2")
+
+[node name="Timer" type="Timer" parent="." unique_id=1136870790]
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2129086201]
+texture_filter = 1
+position = Vector2(1, 72)
+scale = Vector2(10, 10)
+texture = ExtResource("2_q8tx2")
+offset = Vector2(5.3999996, -5.4)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

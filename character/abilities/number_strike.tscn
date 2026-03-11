@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dbpy1h44bit6q"]
+
+[ext_resource type="Script" uid="uid://dfbxqvpiinaml" path="res://character/abilities/number_strike.gd" id="1_8tdie"]
+[ext_resource type="Texture2D" uid="uid://b0o06ddh41bnp" path="res://icon.svg" id="2_wu4em"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5donh"]
+size = Vector2(64, 66)
+
+[node name="number_strike" type="Node2D" unique_id=57190682]
+script = ExtResource("1_8tdie")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=612250068]
+texture_filter = 1
+scale = Vector2(0.265625, 0.28125)
+texture = ExtResource("2_wu4em")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=658968526]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1777341845]
+shape = SubResource("RectangleShape2D_5donh")

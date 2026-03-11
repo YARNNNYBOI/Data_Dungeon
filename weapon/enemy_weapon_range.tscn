@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bps4gmyi3u08e"]
+
+[ext_resource type="Script" uid="uid://bknjyulamj1lb" path="res://weapon/enemy_weapon_range.gd" id="1_tn1ug"]
+
+[node name="enemy_weapon_range" type="Node2D" unique_id=522812703]
+script = ExtResource("1_tn1ug")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1424231312]
+position = Vector2(0, 1)
+rotation = -1.5707964
+scale = Vector2(0.140625, 1)
+centered = false
+offset = Vector2(-62.1, -0.13)
+
+[node name="Timer" type="Timer" parent="." unique_id=887065229]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

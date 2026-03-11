@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://db8pql1lkveqg"]
+
+[ext_resource type="Script" uid="uid://coi53wed2vgww" path="res://weapon/projectile.gd" id="1_wadrg"]
+[ext_resource type="Texture2D" uid="uid://cait7iafulfh3" path="res://weapon/sprites/arrow.png" id="2_k7v7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7v7u"]
+size = Vector2(19, 10)
+
+[node name="projectile" type="Area2D" unique_id=1017007937]
+script = ExtResource("1_wadrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1224233787]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_k7v7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1002254095]
+texture_filter = 1
+position = Vector2(42, 4)
+texture = ExtResource("2_k7v7u")
+offset = Vector2(-42, -4)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

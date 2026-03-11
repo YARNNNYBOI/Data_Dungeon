@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://diapvqcogtyss"]
+
+[ext_resource type="Script" uid="uid://84i1e4o6ft7d" path="res://items/artifacts/artifact_1.gd" id="1_jjx8v"]
+[ext_resource type="Texture2D" uid="uid://0f7fnqkosjbb" path="res://items/artifacts/artifact1.png" id="2_hdlug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjx8v"]
+size = Vector2(26, 28)
+
+[node name="artifact" type="Node2D" unique_id=966135498]
+script = ExtResource("1_jjx8v")
+item_name = "artifact_1"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626610207]
+texture_filter = 1
+texture = ExtResource("2_hdlug")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1565289909]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1556356162]
+shape = SubResource("RectangleShape2D_jjx8v")
+
+[node name="Control" type="Control" parent="." unique_id=401782616]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 35.0
+offset_bottom = 32.0
+
+[node name="Label" type="Label" parent="Control" unique_id=558643300]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 40.0
+offset_bottom = -1.0
+text = "E"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

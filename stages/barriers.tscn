@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c73jsyqm7me3r"]
+
+[ext_resource type="Texture2D" uid="uid://dtgoi3gptefaa" path="res://stages/tilesets/doors_closed.png" id="1_xuc24"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46bmm"]
+size = Vector2(50, 17)
+
+[node name="Barriers" type="StaticBody2D" unique_id=1107646465]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=663881608]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_46bmm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1590144291]
+texture_filter = 1
+texture = ExtResource("1_xuc24")

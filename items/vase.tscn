@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://wm8bjt6ey0p1"]
+
+[ext_resource type="Script" uid="uid://dwpgjbthuciou" path="res://items/vase.gd" id="1_oltn7"]
+[ext_resource type="PackedScene" uid="uid://b73bd1c7ljujf" path="res://items/potion.tscn" id="2_4c44a"]
+[ext_resource type="Texture2D" uid="uid://b0o06ddh41bnp" path="res://icon.svg" id="2_5aovi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c44a"]
+size = Vector2(92, 92)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5aovi"]
+radius = 104.76191
+
+[node name="vase" type="StaticBody2D" unique_id=1240479490 groups=["pot"]]
+script = ExtResource("1_oltn7")
+item = ExtResource("2_4c44a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2147398002]
+texture_filter = 1
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_5aovi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520360090]
+position = Vector2(5.9604645e-08, 0)
+scale = Vector2(0.105, 0.105)
+shape = SubResource("RectangleShape2D_4c44a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=709523492]
+position = Vector2(1, 0)
+scale = Vector2(0.105, 0.105)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=362659107]
+position = Vector2(-9.523809, 0)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_5aovi")

@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://bvil6hkchwhbe"]
+
+[ext_resource type="Script" uid="uid://cm12s4adctjd3" path="res://character/enemy.gd" id="1_4l07s"]
+[ext_resource type="PackedScene" uid="uid://cbvti5mnqgxy0" path="res://weapon/enemy_weapon.tscn" id="2_05lpe"]
+[ext_resource type="Texture2D" uid="uid://2us5kdek1cx" path="res://character/animated_enemies/bouncing-goblin1.png" id="3_qe7hi"]
+[ext_resource type="Texture2D" uid="uid://dguyv7ays8k7t" path="res://character/animated_enemies/bouncing-goblin2.png" id="4_wdsre"]
+[ext_resource type="Texture2D" uid="uid://dokbiem1m5iqt" path="res://character/animated_enemies/bouncing-goblin3.png" id="5_3ehpx"]
+[ext_resource type="Texture2D" uid="uid://dlrqio28in60y" path="res://character/animated_enemies/bouncing-goblin4.png" id="6_cycu8"]
+[ext_resource type="Texture2D" uid="uid://b7aoaamo12lsh" path="res://character/animated_enemies/bouncing-goblin5.png" id="7_feri8"]
+[ext_resource type="Texture2D" uid="uid://dfd0tdd6i1am" path="res://character/animated_enemies/bouncing-goblin6.png" id="8_v3pno"]
+[ext_resource type="Texture2D" uid="uid://dudrsgbcfhkcf" path="res://character/animated_enemies/goblin_walk1.png" id="9_dotrn"]
+[ext_resource type="Texture2D" uid="uid://cy3xk5h3vworr" path="res://character/animated_enemies/goblin_walk2.png" id="10_goccb"]
+[ext_resource type="Texture2D" uid="uid://dgndpqt51ng5q" path="res://character/animated_enemies/goblin_walk3.png" id="11_c6edy"]
+[ext_resource type="Texture2D" uid="uid://icwph313hqed" path="res://character/animated_enemies/goblin_walk4.png" id="12_on87d"]
+[ext_resource type="Texture2D" uid="uid://cowferwybb1ms" path="res://character/animated_enemies/goblin_walk5.png" id="13_ussae"]
+[ext_resource type="Texture2D" uid="uid://b5jllhvlg4xao" path="res://character/animated_enemies/goblin_walk6.png" id="14_yuld7"]
+[ext_resource type="Texture2D" uid="uid://b5fxgnmfci5vn" path="res://character/animated_enemies/goblin_walk7.png" id="15_hmg7a"]
+[ext_resource type="Texture2D" uid="uid://c3uohfie4fvu6" path="res://character/animated_enemies/goblin_walk8.png" id="16_i82jj"]
+[ext_resource type="Texture2D" uid="uid://trklcejlykl2" path="res://character/animated_enemies/goblin_walk9.png" id="17_ee27h"]
+[ext_resource type="Texture2D" uid="uid://dkd4roaav2jml" path="res://character/animated_enemies/goblin_walk10.png" id="18_ot814"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nv07g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qe7hi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wdsre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3ehpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cycu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_feri8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v3pno")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dotrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_goccb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c6edy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_on87d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ussae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yuld7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hmg7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i82jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ee27h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ot814")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05lpe"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_juptw"]
+radius = 65.19202
+
+[node name="enemy" type="CharacterBody2D" unique_id=1072355191]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_4l07s")
+
+[node name="enemy_weapon" parent="." unique_id=531249697 instance=ExtResource("2_05lpe")]
+
+[node name="enemy_sprite" type="AnimatedSprite2D" parent="." unique_id=1043752970]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_nv07g")
+animation = &"walking"
+frame_progress = 0.43042928
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1378576910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=72966531]
+shape = SubResource("CircleShape2D_05lpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1932370709]
+shape = SubResource("CircleShape2D_juptw")
+debug_color = Color(0.40896234, 0.5925763, 0.381113, 0.41960785)
+
+[node name="color_timer" type="Timer" parent="." unique_id=1271113571]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="color_timer" to="." method="_on_color_timer_timeout"]

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://uo46k2lfm1n0"]
+
+[ext_resource type="Script" uid="uid://4m0c077um57v" path="res://character/enemy_bow.gd" id="1_iyec5"]
+[ext_resource type="PackedScene" uid="uid://bps4gmyi3u08e" path="res://weapon/enemy_weapon_range.tscn" id="2_8d2bh"]
+[ext_resource type="Texture2D" uid="uid://b0o06ddh41bnp" path="res://icon.svg" id="3_sjgng"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05lpe"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_juptw"]
+radius = 65.19202
+
+[node name="enemy_bow" type="CharacterBody2D" unique_id=1072355191]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_iyec5")
+
+[node name="enemy_weapon_range" parent="." unique_id=522812703 instance=ExtResource("2_8d2bh")]
+enemy_type = "player"
+
+[node name="enemy_sprite" type="Sprite2D" parent="." unique_id=152886776]
+texture = ExtResource("3_sjgng")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1378576910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=72966531]
+shape = SubResource("CircleShape2D_05lpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1932370709]
+shape = SubResource("CircleShape2D_juptw")
+debug_color = Color(0.40896234, 0.5925763, 0.381113, 0.41960785)
+
+[node name="color_timer" type="Timer" parent="." unique_id=1271113571]
+one_shot = true
+
+[node name="Timer" type="Timer" parent="." unique_id=967257991]
+wait_time = 1.5
+
+[connection signal="timeout" from="color_timer" to="." method="_on_color_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
