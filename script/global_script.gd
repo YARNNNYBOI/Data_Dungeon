@@ -1,10 +1,14 @@
 extends Node
 
+
+#ito lng tignan mo faith :DDD
+var weapon_number : int = 0
+
 var health = 100
 var speed = 100
 
 var character_sprite = ["res://character/player_spriite/jm.tscn","res://character/player_spriite/faith.tscn","res://character/player_spriite/ely.tscn","res://character/player_spriite/tine.tscn","res://character/player_spriite/clark.tscn","res://character/player_spriite/rose.tscn"]
-var weapon_number : int = 0
+
 var weapon = ["res://weapon/weapon.tscn", "res://weapon/weapon_range.tscn","res://weapon/weapon_range.tscn", "res://weapon/weapon.tscn","res://weapon/weapon.tscn","res://weapon/weapon.tscn"]
 var weaponsprite = ["res://weapon/sprites/swordnijm(32x32).png","res://weapon/sprites/bow.png","res://weapon/sprites/staff(16x16).png","res://weapon/sprites/Scythe.png","res://weapon/sprites/swordnijm(32x32).png","res://weapon/sprites/picax.png"]
 var isOnStage1 = false
@@ -33,8 +37,12 @@ var isRoomOnClear = false
 
 var player_artifacts = []
 var player_artifacts_group = []
-var artifact_text = ["res://items/artifacts/artifact1.png", "res://items/artifacts/artifact2.png", "res://items/artifacts/artifact3.png", "res://items/artifacts/artifact4.png", "res://items/artifacts/artifact6.png"]
+var player_artifact_path = []
 
+var using_pedestal = false
+var on_pedestal = false
+
+var can_move = true
 var main_menu_pos = Vector2(-64.0,-24.0)
 
 var weapon_swing = false
@@ -43,5 +51,4 @@ var potions = ["health", "speed"]
 var potion_effects = [[25,0],[0,5]]
 var potionstext = ["res://items/potions/health_potion.png", "res://items/potions/speed_potion.png"]
 
-var current_pedestal: StaticBody2D = null
 var isOnPillar: bool = false

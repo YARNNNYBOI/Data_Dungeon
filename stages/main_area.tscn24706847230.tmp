@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c654x1snb080c" path="res://character/player.tscn" id="5_dpmqb"]
 [ext_resource type="PackedScene" uid="uid://c73jsyqm7me3r" path="res://stages/barriers.tscn" id="6_ite7n"]
 [ext_resource type="PackedScene" uid="uid://wm8bjt6ey0p1" path="res://items/vase.tscn" id="7_6we67"]
-[ext_resource type="PackedScene" uid="uid://b3x8m3bnqn0n2" path="res://items/pedestal.tscn" id="8_4xcbs"]
+[ext_resource type="PackedScene" uid="uid://dtsyoql7ldu6r" path="res://stages/tilesets/pedestal.tscn" id="8_4xcbs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fe32r"]
 texture = ExtResource("2_dpmqb")
@@ -118,8 +118,57 @@ shape = SubResource("RectangleShape2D_4xcbs")
 [node name="vase" parent="." unique_id=1240479490 instance=ExtResource("7_6we67")]
 position = Vector2(-80, 32)
 
-[node name="pedestal" parent="." unique_id=1542183197 instance=ExtResource("8_4xcbs")]
-position = Vector2(-112, -288)
+[node name="pedestal" parent="." unique_id=1859429470 instance=ExtResource("8_4xcbs")]
+position = Vector2(-104, -288)
+pillarnum = "p1"
+
+[node name="pedestal2" parent="." unique_id=1115621971 instance=ExtResource("8_4xcbs")]
+position = Vector2(-152, -288)
+pillarnum = "p2"
+
+[node name="pedestal3" parent="." unique_id=1338357294 instance=ExtResource("8_4xcbs")]
+position = Vector2(-200, -288)
+pillarnum = "p3"
+
+[node name="pedestal4" parent="." unique_id=947784590 instance=ExtResource("8_4xcbs")]
+position = Vector2(-8, -288)
+pillarnum = "p4"
+
+[node name="pedestal5" parent="." unique_id=2127258262 instance=ExtResource("8_4xcbs")]
+position = Vector2(40, -288)
+pillarnum = "p5"
+
+[node name="pedestal6" parent="." unique_id=161171635 instance=ExtResource("8_4xcbs")]
+position = Vector2(88, -288)
+pillarnum = "p6"
+
+[node name="Control" type="Control" parent="." unique_id=1518931736]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1264.0
+offset_top = -832.0
+offset_right = -1224.0
+offset_bottom = -792.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1687640207]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=354570129]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/VBoxContainer" unique_id=85444680]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=890150407]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer" unique_id=2147133078]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/HBoxContainer" unique_id=1735634971]
+layout_mode = 2
 
 [connection signal="body_entered" from="gate1" to="." method="_on_gate_1_body_entered"]
 [connection signal="body_entered" from="gate2" to="." method="_on_gate_2_body_entered"]

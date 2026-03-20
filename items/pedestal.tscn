@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b3x8m3bnqn0n2"]
+
+[ext_resource type="Script" uid="uid://cjla07m1apydj" path="res://items/pedestal.gd" id="1_x8c7t"]
+[ext_resource type="Texture2D" uid="uid://cfvpnpvhp8r2e" path="res://stages/tilesets/pedestal.png" id="2_plbj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8c7t"]
+size = Vector2(39, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plbj5"]
+size = Vector2(16, 32)
+
+[node name="pedestal" type="StaticBody2D" unique_id=1542183197]
+z_index = -1
+script = ExtResource("1_x8c7t")
+
+[node name="pedestal_text" type="Sprite2D" parent="." unique_id=480010105]
+texture_filter = 1
+texture = ExtResource("2_plbj5")
+
+[node name="artifact_text" type="Sprite2D" parent="." unique_id=934129174]
+texture_filter = 1
+position = Vector2(-0.9999999, -12.999999)
+scale = Vector2(0.6875, 0.625)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1929756536]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=647262615]
+shape = SubResource("RectangleShape2D_x8c7t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1245209919]
+shape = SubResource("RectangleShape2D_plbj5")
+
+[node name="Label" type="Label" parent="CollisionShape2D" unique_id=1235465179]
+offset_left = -4.0
+offset_top = -37.0
+offset_right = 36.0
+offset_bottom = -14.0
+text = "E"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

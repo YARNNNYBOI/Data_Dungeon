@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cxt6a0fy14bx1"]
+
+[ext_resource type="Script" uid="uid://cn0qcb3uuiiy5" path="res://GUI/inventory.gd" id="1_1h50r"]
+[ext_resource type="Texture2D" uid="uid://jugah6maje6r" path="res://GUI/Inventory.png" id="1_v1ohj"]
+[ext_resource type="Texture2D" uid="uid://0f7fnqkosjbb" path="res://items/artifacts/artifact1.png" id="2_1h50r"]
+[ext_resource type="Script" uid="uid://cwokl3dv1vnbn" path="res://GUI/texture_rect.gd" id="3_ykgdv"]
+[ext_resource type="Texture2D" uid="uid://3ugeh71jhsqy" path="res://items/artifacts/artifact2.png" id="5_ntwcx"]
+[ext_resource type="Texture2D" uid="uid://c05wvh6xlumgl" path="res://items/artifacts/artifact4.png" id="6_fjnhi"]
+
+[node name="Inventory" type="Control" unique_id=1348409348]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1h50r")
+
+[node name="Inventory" type="TextureRect" parent="." unique_id=1549738765]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = 27.0
+offset_right = -77.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v1ohj")
+expand_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="Inventory" unique_id=128675745]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -369.0
+offset_top = -128.0
+offset_right = 369.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = -6
+theme_override_constants/v_separation = -11
+columns = 6
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/GridContainer" unique_id=957943893]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_1h50r")
+script = ExtResource("3_ykgdv")
+
+[node name="TextureRect2" type="TextureRect" parent="Inventory/GridContainer" unique_id=580760889]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("5_ntwcx")
+script = ExtResource("3_ykgdv")
+
+[node name="TextureRect3" type="TextureRect" parent="Inventory/GridContainer" unique_id=746741652]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("6_fjnhi")
+script = ExtResource("3_ykgdv")
+
+[node name="TextureRect4" type="TextureRect" parent="Inventory/GridContainer" unique_id=12194142]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_1h50r")
+script = ExtResource("3_ykgdv")
+
+[node name="TextureRect5" type="TextureRect" parent="Inventory/GridContainer" unique_id=1530083908]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_1h50r")
+script = ExtResource("3_ykgdv")
+
+[node name="TextureRect6" type="TextureRect" parent="Inventory/GridContainer" unique_id=1940709501]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_1h50r")
+script = ExtResource("3_ykgdv")

@@ -15,13 +15,15 @@ extends CharacterBody2D
 
 @onready var death_screen: Control = $"CanvasLayer/Death Screen"
 @onready var gui: Control = $CanvasLayer/GUI
-@onready var inventory: Control = $CanvasLayer/Inventory
 @onready var info_screen: Control = $CanvasLayer/Info_Screen
 
 @onready var cooldown_bar = $CanvasLayer/GUI/ProgressBar
 @onready var health_bar: ProgressBar = $CanvasLayer/GUI/health
 
-@onready var artifact_grid: GridContainer = $CanvasLayer/Inventory/Inventory/GridContainer
+# INVENTORY PREFAB
+@onready var inventory_scene = preload("res://GUI/inventory.tscn")
+var inventory_instance
+
 # ==================================================
 # EXPORTED VARIABLES
 # ==================================================
@@ -30,14 +32,12 @@ extends CharacterBody2D
 @export var knockback_decay: float = 500
 @export var strenght_amount : int
 
-
 # ==================================================
 # GLOBAL STATS
 # ==================================================
 
 @onready var health = GlobalScript.health
 @onready var speed = GlobalScript.speed
-
 
 # ==================================================
 # PLAYER STATE
@@ -46,9 +46,7 @@ extends CharacterBody2D
 var knockback_velocity: Vector2 = Vector2.ZERO
 var isWeaponInUse = false
 var is_knockedback = false
-var can_move = true
-@onready var isInventoryOpen = false
-
+var isInventoryOpen = false
 
 # ==================================================
 # WEAPON + CHARACTER DATA
@@ -58,7 +56,6 @@ var can_move = true
 @onready var weapon_scene = load(GlobalScript.weapon[number_weapon])
 @onready var sprite_scene = load(GlobalScript.character_sprite[number_weapon])
 
-
 # ==================================================
 # RUNTIME INSTANCES
 # ==================================================
@@ -66,24 +63,19 @@ var can_move = true
 var weapon_instance: Node2D = null
 var sprite_instance: AnimatedSprite2D
 
-
 # ==================================================
 # READY
 # ==================================================
 
 func _ready() -> void:
+
 	cooldown_bar.max_value = weapon_timer.wait_time
 
 	if timer:
-		print(timer)
-		print(timer.wait_time)
-		print(cooldown)
 		timer.wait_time = cooldown
 	else:
 		push_error("Timer not found!")
 
-
-	inventory.visible = false
 	death_screen.visible = false
 	gui.visible = true
 	info_screen.visible = false
@@ -100,13 +92,14 @@ func _ready() -> void:
 
 	# Spawn weapon
 	if weapon_scene:
-		weapon_instance = weapon_scene.instantiate() as Node2D
+		weapon_instance = weapon_scene.instantiate()
 
 		weapon_instance.get_node("Sprite2D").texture = load(GlobalScript.weaponsprite[number_weapon])
 		weapon_instance.get_node("Sprite2D").offset = GlobalScript.weapon_offset_right[number_weapon]
 		weapon_instance.get_node("Sprite2D").position = GlobalScript.weapon_position_right[number_weapon]
 		weapon_instance.get_node("Sprite2D").rotation = GlobalScript.weapon_rotation_right[number_weapon]
 		weapon_instance.get_node("Sprite2D").scale = GlobalScript.weapon_scale[number_weapon]
+
 		weapon_instance.damage_amount = GlobalScript.weapon_damage[number_weapon]
 		weapon_instance.cooldown_time = GlobalScript.weapon_cooldown[number_weapon]
 		weapon_instance.weapon_range = GlobalScript.weapon_range[number_weapon]
@@ -120,17 +113,29 @@ func _ready() -> void:
 		add_child(weapon_instance)
 		weapon_instance.position = Vector2.ZERO
 
+	# SPAWN INVENTORY UI
+	inventory_instance = inventory_scene.instantiate()
+	$CanvasLayer.add_child(inventory_instance)
+	inventory_instance.visible = false
+
 
 # ==================================================
 # PHYSICS
 # ==================================================
 
+
 func _physics_process(delta):
-	if Input.is_action_just_pressed("inventory"):
+	# Only allow inventory toggle if no pedestal is blocking
+	var pedestal_blocking := false
+	pedestal_blocking = InventoryScript.can_access_inventory
+
+	if Input.is_action_just_pressed("interact") and GlobalScript.on_pedestal:
 		toggle_inventory()
-	# Movement input
+
 	var input_vector = Vector2.ZERO
-	if can_move:
+
+	if GlobalScript.can_move:
+
 		if not is_knockedback:
 
 			input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -138,45 +143,36 @@ func _physics_process(delta):
 
 			input_vector = input_vector.normalized() * GlobalScript.speed
 
-
-		# Movement + knockback
 		velocity = input_vector + knockback_velocity
 		move_and_slide()
 
-
-		# Knockback decay
 		if knockback_velocity.length() > 0:
 
 			var decay = knockback_decay * delta
 
 			if knockback_velocity.length() <= decay:
-
 				knockback_velocity = Vector2.ZERO
 				is_knockedback = false
-
 			else:
-
 				knockback_velocity -= knockback_velocity.normalized() * decay
 
-
 	update_animation()
-
 
 # ==================================================
 # FRAME PROCESS
 # ==================================================
 
-func _process(delta: float):
+func _process(delta):
 
 	if GlobalScript.weapon_swing and !isWeaponInUse:
 		pass
 	else:
 		weapon_timer.start()
 
-	weapon_instance.look_at(get_global_mouse_position())
+	if weapon_instance:
+		weapon_instance.look_at(get_global_mouse_position())
 
 	update_ui()
-
 
 # ==================================================
 # UI
@@ -186,7 +182,6 @@ func update_ui():
 
 	health_bar.value = GlobalScript.health
 	cooldown_bar.value = weapon_timer.time_left
-
 
 # ==================================================
 # ANIMATION
@@ -214,7 +209,6 @@ func update_animation():
 		else:
 			player_sprite.play("walking_left")
 
-
 # ==================================================
 # DAMAGE / STATUS
 # ==================================================
@@ -233,75 +227,63 @@ func take_damage(amount, source_position, knockback_decay, strenght_amount):
 	var strength = strenght_amount
 
 	knockback_velocity = direction * strength
-
 	is_knockedback = true
 
 
 func damage_effect():
 
-	player_sprite.modulate = Color(255, 0, 0)
+	player_sprite.modulate = Color(255,0,0)
 	color_timer.start()
 
 
-func _on_color_timer_timeout() -> void:
+func _on_color_timer_timeout():
 
-	player_sprite.modulate = Color(1, 1, 1, 1)
+	player_sprite.modulate = Color(1,1,1,1)
 
 
 func check_status():
 
 	if GlobalScript.health <= 0:
-		can_move = false
+		GlobalScript.can_move = false
 		gui.visible = false
 		death_screen.visible = true
+
 
 # ==================================================
 # INVENTORY
 # ==================================================
 
-func update_inventory_grid():
-	# Clear all cells first
-	for cell in artifact_grid.get_children():
-		if cell is TextureRect:
-			cell.texture = null
-
-	# Fill cells with collected artifact textures
-	for i in range(GlobalScript.player_artifacts.size()):
-		var artifact_name = GlobalScript.player_artifacts[i]  # e.g. "artifact_1"
-		var number = artifact_name.split("_")[1].to_int() - 1
-		var tex_path = GlobalScript.artifact_text[number]
-		var tex = load(tex_path)
-
-		if i < artifact_grid.get_child_count():
-			var cell = artifact_grid.get_child(i)
-			if cell is TextureRect:
-				cell.texture = tex
-				
-
 func toggle_inventory():
-	isInventoryOpen = !isInventoryOpen
-	inventory.visible = isInventoryOpen
-	can_move = !isInventoryOpen
-
-	if isInventoryOpen:
-		update_inventory_grid()
+	
+	if !GlobalScript.using_pedestal:
+		GlobalScript.can_move = false
+		inventory_instance.visible = true
+		GlobalScript.using_pedestal = true
+	else:
+		GlobalScript.can_move = true
+		inventory_instance.visible = false
+		GlobalScript.using_pedestal = false
+		
 # ==================================================
 # UI EVENTS
 # ==================================================
 
 func show_info_screen(title, description):
+
 	title_text.text = title
 	description_text.text = description
 	info_screen.visible = true
-	can_move = false
+	GlobalScript.can_move = false
 
-func _on_button_2_pressed() -> void:
+
+func _on_button_2_pressed():
+
 	GlobalScript.health = health
 	GlobalScript.speed = speed
-
 	get_tree().change_scene_to_file("res://stages/main_area.tscn")
 
 
-func _on_button_1_pressed() -> void:
+func _on_button_1_pressed():
+
 	info_screen.visible = false
-	can_move = true
+	GlobalScript.can_move = true
