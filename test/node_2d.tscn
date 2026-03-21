@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dcy63dg3ytng0"]
+
+[ext_resource type="PackedScene" uid="uid://c654x1snb080c" path="res://character/player.tscn" id="1_edpw0"]
+[ext_resource type="PackedScene" uid="uid://b3x8m3bnqn0n2" path="res://items/pedestal.tscn" id="2_aqf5u"]
+
+[node name="Node2D" type="Node2D" unique_id=829552583]
+
+[node name="player" parent="." unique_id=1556820961 instance=ExtResource("1_edpw0")]
+position = Vector2(279, 190)
+
+[node name="pedestal" parent="." unique_id=1542183197 instance=ExtResource("2_aqf5u")]
+position = Vector2(327, 201)

@@ -52,14 +52,3 @@ var potion_effects = [[25,0],[0,5]]
 var potionstext = ["res://items/potions/health_potion.png", "res://items/potions/speed_potion.png"]
 
 var isOnPillar: bool = false
-
-var current_pedestal : Variant
-
-
-var pedestals = {
-	"p1" : null,
-	"p2" : null,
-	"p3" : null,
-	"p4" : null,
-	"p5" : null,
-}

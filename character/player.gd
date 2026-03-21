@@ -254,7 +254,7 @@ func check_status():
 # ==================================================
 
 func toggle_inventory():
-	inventory_instance.update_inventory_grid()
+	
 	if !GlobalScript.using_pedestal:
 		GlobalScript.can_move = false
 		inventory_instance.visible = true

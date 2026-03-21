@@ -120,11 +120,6 @@ position = Vector2(-80, 32)
 
 [node name="pedestal" parent="." unique_id=1542183197 instance=ExtResource("8_4xcbs")]
 position = Vector2(-112, -288)
-pedestal = "p1"
-
-[node name="pedestal2" parent="." unique_id=1651682304 instance=ExtResource("8_4xcbs")]
-position = Vector2(0, -288)
-pedestal = "p2"
 
 [connection signal="body_entered" from="gate1" to="." method="_on_gate_1_body_entered"]
 [connection signal="body_entered" from="gate2" to="." method="_on_gate_2_body_entered"]

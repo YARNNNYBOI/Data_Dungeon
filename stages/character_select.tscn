@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://btw2f2y3pa2k3"]
 
 [ext_resource type="Script" uid="uid://b63b6k4lkb6ex" path="res://stages/character_select.gd" id="1_tddig"]
+[ext_resource type="Texture2D" uid="uid://di6gv6ir44qfd" path="res://GUI/character_select/characterFrame.png" id="2_jd3lk"]
+[ext_resource type="Texture2D" uid="uid://dkhtglc804mew" path="res://GUI/character_select/Name_Frame2.png" id="3_3vpx3"]
+[ext_resource type="PackedScene" uid="uid://djounvle46g20" path="res://character/player_spriite/faith.tscn" id="3_qvlag"]
+[ext_resource type="Texture2D" uid="uid://1fq0sgw8iqj6" path="res://GUI/character_select/DescriptionFrame.png" id="4_qvlag"]
+[ext_resource type="Texture2D" uid="uid://7ldy21egn6ph" path="res://GUI/character_select/arrow_not_hover.png" id="5_507mx"]
+[ext_resource type="Texture2D" uid="uid://cvgoplly1ndfq" path="res://GUI/character_select/arrow_hover.png" id="6_dok6u"]
+[ext_resource type="Texture2D" uid="uid://b7s4ah0nyt38q" path="res://GUI/character_select/play_button.png" id="7_kmgso"]
+[ext_resource type="Texture2D" uid="uid://po1vskmdfu61" path="res://GUI/character_select/play_button_hover.png" id="8_m6gv6"]
 
 [node name="CharacterSelect" type="Control" unique_id=698406199]
 layout_mode = 3
@@ -11,59 +19,82 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tddig")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2114785370]
+[node name="char_frame" type="TextureRect" parent="." unique_id=1798317505]
+texture_filter = 1
+layout_mode = 0
+offset_left = 170.0
+offset_top = 112.0
+offset_right = 206.0
+offset_bottom = 160.0
+scale = Vector2(8, 8)
+texture = ExtResource("2_jd3lk")
+
+[node name="faith" parent="char_frame" unique_id=1635515013 instance=ExtResource("3_qvlag")]
+position = Vector2(18, 24.125)
+scale = Vector2(1, 1)
+frame_progress = 0.10474743
+
+[node name="name_frame" type="TextureRect" parent="." unique_id=1749617134]
+texture_filter = 1
+layout_mode = 0
+offset_left = 546.0
+offset_top = 94.00001
+offset_right = 618.0
+offset_bottom = 118.00001
+scale = Vector2(5, 5)
+texture = ExtResource("3_3vpx3")
+
+[node name="des_frame" type="TextureRect" parent="." unique_id=2075983975]
+texture_filter = 1
+layout_mode = 0
+offset_left = 509.00003
+offset_top = 255.0
+offset_right = 581.0
+offset_bottom = 295.0
+scale = Vector2(6, 6)
+texture = ExtResource("4_qvlag")
+
+[node name="go_right" type="TextureButton" parent="." unique_id=982218137]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 281.0
+offset_right = 1033.0
+offset_bottom = 305.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("5_507mx")
+texture_pressed = ExtResource("6_dok6u")
+texture_hover = ExtResource("6_dok6u")
+
+[node name="go_left" type="TextureButton" parent="." unique_id=2142790431]
+texture_filter = 1
+layout_mode = 0
+offset_left = -24.999985
+offset_top = 209.0
+offset_right = -0.99998474
+offset_bottom = 233.0
+rotation = 3.1415927
+scale = Vector2(6, 6)
+pivot_offset = Vector2(23.776808, 24.36205)
+texture_normal = ExtResource("5_507mx")
+texture_pressed = ExtResource("6_dok6u")
+texture_hover = ExtResource("6_dok6u")
+
+[node name="play" type="TextureButton" parent="." unique_id=1248621869]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -239.0
+offset_top = -115.0
+offset_right = -159.0
+offset_bottom = -91.0
 grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=1563503349]
-layout_direction = 1
-layout_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="GridContainer" parent="MarginContainer/CenterContainer" unique_id=892606745]
-layout_mode = 2
-theme_override_constants/h_separation = 50
-theme_override_constants/v_separation = 25
-columns = 2
-
-[node name="Castro" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1336795992]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Castro"
-
-[node name="Faith" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=510943291]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Faith"
-
-[node name="Ely" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=344764676]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Ely
-"
-
-[node name="Tine" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=751377498]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Tine"
-
-[node name="Clark" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1867294821]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Clark"
-
-[node name="Rose" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=2108280274]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "Rose"
-
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Castro" to="." method="_on_castro_pressed"]
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Faith" to="." method="_on_ely_pressed"]
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Ely" to="." method="_on_faith_pressed"]
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Tine" to="." method="_on_tine_pressed"]
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Clark" to="." method="_on_clark_pressed"]
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Rose" to="." method="_on_rose_pressed"]
+grow_vertical = 0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("7_kmgso")
+texture_pressed = ExtResource("8_m6gv6")
+texture_hover = ExtResource("8_m6gv6")
