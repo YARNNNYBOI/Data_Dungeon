@@ -1,29 +1,85 @@
 extends Control
 
+@onready var char_frame: TextureRect = $char_frame
+@onready var name_label = $name_frame/Label
+@onready var des_label = $des_frame/Label
+@onready var character_display
 
-func _on_castro_pressed() -> void:
-	GlobalScript.weapon_number = 0
-	go_to_world()
 
-func _on_ely_pressed() -> void:
-	GlobalScript.weapon_number = 1
-	go_to_world()
-
-func _on_faith_pressed() -> void:
-	GlobalScript.weapon_number = 2
-	go_to_world()
-	
-func _on_tine_pressed() -> void:
-	GlobalScript.weapon_number = 3
-	go_to_world()
-
-func _on_clark_pressed() -> void:
-	GlobalScript.weapon_number = 4
-	go_to_world()
-
-func _on_rose_pressed() -> void:
-	GlobalScript.weapon_number = 5
-	go_to_world()
+@onready var character_select = 0
+@onready var characters = {
+	"jm" : {"path" : "res://character/player_spriite/jm.tscn",
+			"name" : "Castro",
+			"des" : "wahwahwah",},
+	"faith" : {
+		"path" : "res://character/player_spriite/faith.tscn",
+		"name" : "Faith",
+		"des" : "beautiful",
+	},
+	"ely" : {
+		"path" : "res://character/player_spriite/ely.tscn",
+		"name" : "Ely",
+		"des" : "cutiepie",
+	},
+	"tine" : {
+		"path" : "res://character/player_spriite/tine.tscn",
+		"name" : "Tine",
+		"des" : "pretty",
+	},
+	"clark" : {
+		"path" : "res://character/player_spriite/clark.tscn",
+		"name" : "Clark",
+		"des" : "north"
+	},
+	"rose" : {
+		"path" : "res://character/player_spriite/rose.tscn",
+		"name" : "Rose",
+		"des" : "babygirl",
+	},
+}
+func  _ready() -> void:
+	change_character()
 
 func go_to_world():
 	get_tree().change_scene_to_file("res://stages/main_area.tscn")
+
+
+func _on_go_right_pressed() -> void:
+	character_select += 1
+	if character_select > 5:
+		character_select = 0
+	change_character()
+
+
+func _on_go_left_pressed() -> void:
+	character_select -= 1
+	if character_select < -1:
+		character_select = 5
+	change_character()
+	
+func change_character():
+	if char_frame.get_children().size() != 0:
+		for child in char_frame.get_children():
+			child.queue_free()
+				
+		get_character()
+	else:
+		print("no")
+		get_character()
+		
+func get_character():
+	#change name
+	name_label.text = characters[characters.keys()[character_select]]["name"]
+	des_label.text = characters[characters.keys()[character_select]]["des"]
+	
+	var character_scene = load(characters[characters.keys()[character_select]]["path"])
+	character_display = character_scene.instantiate()
+	character_display.scale = Vector2(1,1)
+	character_display.position = Vector2(17.875,27.125)
+	char_frame.add_child(character_display)
+	character_display.play("walking_down")
+
+
+func _on_play_pressed() -> void:
+	GlobalScript.weapon_number = character_select
+	go_to_world()

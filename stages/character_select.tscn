@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://po1vskmdfu61" path="res://GUI/character_select/play_button_hover.png" id="8_m6gv6"]
 
 [node name="CharacterSelect" type="Control" unique_id=698406199]
+custom_minimum_size = Vector2(300, 150)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,46 +22,77 @@ script = ExtResource("1_tddig")
 
 [node name="char_frame" type="TextureRect" parent="." unique_id=1798317505]
 texture_filter = 1
-layout_mode = 0
-offset_left = 170.0
-offset_top = 112.0
-offset_right = 206.0
-offset_bottom = 160.0
-scale = Vector2(8, 8)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.273
+anchor_top = 0.469
+anchor_right = 0.273
+anchor_bottom = 0.469
+offset_left = -144.496
+offset_top = -191.91202
+offset_right = -108.496
+offset_bottom = -143.91202
+scale = Vector2(10, 10)
 texture = ExtResource("2_jd3lk")
 
 [node name="faith" parent="char_frame" unique_id=1635515013 instance=ExtResource("3_qvlag")]
-position = Vector2(18, 24.125)
+position = Vector2(17.875, 27.125)
 scale = Vector2(1, 1)
 frame_progress = 0.10474743
 
 [node name="name_frame" type="TextureRect" parent="." unique_id=1749617134]
 texture_filter = 1
-layout_mode = 0
-offset_left = 546.0
-offset_top = 94.00001
-offset_right = 618.0
-offset_bottom = 118.00001
-scale = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63000005
+anchor_top = 0.238
+anchor_right = 0.63000005
+anchor_bottom = 0.238
+offset_left = -215.76007
+offset_top = -61.224
+offset_right = -143.76007
+offset_bottom = -37.224
+scale = Vector2(8, 8)
 texture = ExtResource("3_3vpx3")
+
+[node name="Label" type="Label" parent="name_frame" unique_id=824316683]
+layout_mode = 0
+offset_right = 71.399994
+offset_bottom = 23.0
+horizontal_alignment = 1
 
 [node name="des_frame" type="TextureRect" parent="." unique_id=2075983975]
 texture_filter = 1
-layout_mode = 0
-offset_left = 509.00003
-offset_top = 255.0
-offset_right = 581.0
-offset_bottom = 295.0
-scale = Vector2(6, 6)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.629
+anchor_top = 0.57900006
+anchor_right = 0.629
+anchor_bottom = 0.57900006
+offset_left = -215.608
+offset_top = -120.19205
+offset_right = -143.60803
+offset_bottom = -80.19205
+scale = Vector2(8, 8)
 texture = ExtResource("4_qvlag")
+
+[node name="Label" type="Label" parent="des_frame" unique_id=1445384221]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="go_right" type="TextureButton" parent="." unique_id=982218137]
 texture_filter = 1
-layout_mode = 0
-offset_left = 1009.0
-offset_top = 281.0
-offset_right = 1033.0
-offset_bottom = 305.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.938
+anchor_top = 0.545
+anchor_right = 0.938
+anchor_bottom = 0.545
+offset_left = -71.57605
+offset_top = -72.16
+offset_right = -47.57605
+offset_bottom = -48.160004
 scale = Vector2(6, 6)
 texture_normal = ExtResource("5_507mx")
 texture_pressed = ExtResource("6_dok6u")
@@ -68,11 +100,16 @@ texture_hover = ExtResource("6_dok6u")
 
 [node name="go_left" type="TextureButton" parent="." unique_id=2142790431]
 texture_filter = 1
-layout_mode = 0
-offset_left = -24.999985
-offset_top = 209.0
-offset_right = -0.99998474
-offset_bottom = 233.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.060000002
+anchor_top = 0.47500002
+anchor_right = 0.060000002
+anchor_bottom = 0.47500002
+offset_left = -94.11999
+offset_top = -98.80002
+offset_right = -70.11999
+offset_bottom = -74.80002
 rotation = 3.1415927
 scale = Vector2(6, 6)
 pivot_offset = Vector2(23.776808, 24.36205)
@@ -98,3 +135,7 @@ scale = Vector2(6, 6)
 texture_normal = ExtResource("7_kmgso")
 texture_pressed = ExtResource("8_m6gv6")
 texture_hover = ExtResource("8_m6gv6")
+
+[connection signal="pressed" from="go_right" to="." method="_on_go_right_pressed"]
+[connection signal="pressed" from="go_left" to="." method="_on_go_left_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
