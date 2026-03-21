@@ -55,6 +55,7 @@ var isOnPillar: bool = false
 
 var current_pedestal : Variant
 
+
 var pedestals = {
 	"p1" : null,
 	"p2" : null,

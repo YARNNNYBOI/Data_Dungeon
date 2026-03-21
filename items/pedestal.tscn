@@ -31,6 +31,7 @@ shape = SubResource("RectangleShape2D_x8c7t")
 shape = SubResource("RectangleShape2D_plbj5")
 
 [node name="Label" type="Label" parent="CollisionShape2D" unique_id=1235465179]
+texture_filter = 1
 offset_left = -4.0
 offset_top = -37.0
 offset_right = 36.0
