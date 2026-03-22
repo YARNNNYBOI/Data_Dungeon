@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://c654x1snb080c"]
 
 [ext_resource type="Script" uid="uid://ppjhsa343yb" path="res://character/player.gd" id="2_aypkh"]
+[ext_resource type="Texture2D" uid="uid://srawqqkgxdm3" path="res://character/you_have_failed.png" id="2_bdyh8"]
 [ext_resource type="Texture2D" uid="uid://bmv3ikf2t0heb" path="res://GUI/scroll.png" id="2_monf5"]
+[ext_resource type="Texture2D" uid="uid://bdjprcp65wwdg" path="res://character/retry_button.png" id="3_qe16m"]
+[ext_resource type="Texture2D" uid="uid://ijmyubrogp7k" path="res://character/retry_button_hover.png" id="4_dkowc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aypkh"]
 radius = 64.9038
@@ -38,29 +41,41 @@ one_shot = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=196465068]
 
 [node name="Death Screen" type="Control" parent="CanvasLayer" unique_id=722250785]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Death Screen" unique_id=2013556885]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 102.0
-offset_right = 1098.0
-offset_bottom = 329.0
-theme_override_font_sizes/font_size = 122
-text = "YOU HAVE FAILED"
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Death Screen" unique_id=1016773079]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.35
+anchor_top = 8.562
+anchor_right = 14.35
+anchor_bottom = 8.562
+offset_left = -318.0
+offset_top = -222.48001
+offset_right = 403.0
+offset_bottom = 204.51999
+texture = ExtResource("2_bdyh8")
 
-[node name="Button2" type="Button" parent="CanvasLayer/Death Screen" unique_id=283718046]
-layout_mode = 0
-offset_left = 337.0
-offset_top = 367.0
-offset_right = 785.0
-offset_bottom = 577.0
-theme_override_font_sizes/font_size = 147
-text = "RETRY"
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Death Screen" unique_id=990013980]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.213
+anchor_top = 12.037001
+anchor_right = 14.213
+anchor_bottom = 12.037001
+offset_left = -99.52002
+offset_top = -72.48001
+offset_right = -35.319946
+offset_bottom = -56.28
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_qe16m")
+texture_pressed = ExtResource("4_dkowc")
+texture_hover = ExtResource("4_dkowc")
 
 [node name="GUI" type="Control" parent="CanvasLayer" unique_id=811038320]
 visible = false
@@ -152,5 +167,5 @@ one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="color_timer" to="." method="_on_color_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/Death Screen/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Death Screen/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Info_Screen/Button1" to="." method="_on_button_1_pressed"]

@@ -68,7 +68,7 @@ var sprite_instance: AnimatedSprite2D
 # ==================================================
 
 func _ready() -> void:
-
+	GlobalScript.can_move = true
 	cooldown_bar.max_value = weapon_timer.wait_time
 
 	if timer:
@@ -274,16 +274,15 @@ func show_info_screen(title, description):
 	description_text.text = description
 	info_screen.visible = true
 	GlobalScript.can_move = false
-
-
-func _on_button_2_pressed():
-
-	GlobalScript.health = health
-	GlobalScript.speed = speed
-	get_tree().change_scene_to_file("res://stages/main_area.tscn")
-
+	
 
 func _on_button_1_pressed():
 
 	info_screen.visible = false
 	GlobalScript.can_move = true
+
+
+func _on_texture_button_pressed() -> void:
+	GlobalScript.health = health
+	GlobalScript.speed = speed
+	get_tree().change_scene_to_file("res://stages/main_area.tscn")
