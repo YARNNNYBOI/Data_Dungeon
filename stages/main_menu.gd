@@ -8,4 +8,4 @@ func _on_start_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
-	print("your not going anywhere")
+	get_tree().quit()

@@ -10,31 +10,31 @@ extends Control
 @onready var characters = {
 	"jm" : {"path" : "res://character/player_spriite/jm.tscn",
 			"name" : "Castro",
-			"des" : "wahwahwah",},
+			"des" : "He is the legendary programmer!",},
 	"faith" : {
 		"path" : "res://character/player_spriite/faith.tscn",
 		"name" : "Faith",
-		"des" : "beautiful",
+		"des" : "Born to be a baby girl force to be an independent woman!",
 	},
 	"ely" : {
 		"path" : "res://character/player_spriite/ely.tscn",
 		"name" : "Ely",
-		"des" : "cutiepie",
+		"des" : "She is such a cutie!",
 	},
 	"tine" : {
 		"path" : "res://character/player_spriite/tine.tscn",
 		"name" : "Tine",
-		"des" : "pretty",
+		"des" : "A pretty and strong-wiled woman!",
 	},
 	"clark" : {
 		"path" : "res://character/player_spriite/clark.tscn",
 		"name" : "Clark",
-		"des" : "north"
+		"des" : "He wants to protect people around him!"
 	},
 	"rose" : {
 		"path" : "res://character/player_spriite/rose.tscn",
 		"name" : "Rose",
-		"des" : "babygirl",
+		"des" : "Her charisma was undeafetable!",
 	},
 }
 func  _ready() -> void:
@@ -42,7 +42,6 @@ func  _ready() -> void:
 
 func go_to_world():
 	get_tree().change_scene_to_file("res://stages/main_area.tscn")
-
 
 func _on_go_right_pressed() -> void:
 	character_select += 1
@@ -83,3 +82,7 @@ func get_character():
 func _on_play_pressed() -> void:
 	GlobalScript.weapon_number = character_select
 	go_to_world()
+
+
+func _on_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://stages/MainMenu.tscn")

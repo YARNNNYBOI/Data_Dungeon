@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://bufrfws8s47sn"]
 
 [ext_resource type="Script" uid="uid://dddpxn68rggq7" path="res://stages/main_menu.gd" id="1_jkwpy"]
+[ext_resource type="Texture2D" uid="uid://bc0jm8fsh0fjw" path="res://GUI/startingscreen.png" id="2_b0jik"]
+[ext_resource type="Texture2D" uid="uid://clgphn62sfaft" path="res://GUI/start_button.png" id="3_4yfhw"]
+[ext_resource type="Texture2D" uid="uid://dafoujrahjhfu" path="res://GUI/start_button_hover.png" id="4_avew7"]
+[ext_resource type="Texture2D" uid="uid://b8gxeuv6qryo2" path="res://GUI/exit_button.png" id="5_71jo3"]
+[ext_resource type="Texture2D" uid="uid://bjmjeblyd5usn" path="res://GUI/exit_button_hover.png" id="6_f3t6l"]
 
 [node name="MainMenu" type="Control" unique_id=280771886]
 layout_mode = 3
@@ -11,37 +16,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jkwpy")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=3633931]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="start_bg" type="TextureRect" parent="." unique_id=264422782]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+texture = ExtResource("2_b0jik")
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=556265209]
-layout_direction = 1
-layout_mode = 2
-metadata/_edit_use_anchors_ = true
+[node name="start" type="TextureButton" parent="." unique_id=91663965]
+texture_filter = 1
+layout_mode = 0
+offset_left = 366.0
+offset_top = 366.0
+offset_right = 438.0
+offset_bottom = 382.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("3_4yfhw")
+texture_pressed = ExtResource("4_avew7")
+texture_hover = ExtResource("4_avew7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer" unique_id=2070742644]
-layout_mode = 2
-alignment = 1
+[node name="exit" type="TextureButton" parent="." unique_id=1748924489]
+texture_filter = 1
+layout_mode = 0
+offset_left = 368.0
+offset_top = 476.0
+offset_right = 440.0
+offset_bottom = 492.0
+scale = Vector2(6, 6)
+texture_normal = ExtResource("5_71jo3")
+texture_pressed = ExtResource("6_f3t6l")
+texture_hover = ExtResource("6_f3t6l")
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1080266503]
-layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "Data Dungeon"
-
-[node name="Start" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1599532185]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "hello"
-
-[node name="Exit" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=327028606]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "goodbye"
-
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
