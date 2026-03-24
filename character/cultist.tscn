@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://opesclgudcin"]
+
+[ext_resource type="Script" uid="uid://c73iylnw454xj" path="res://character/cultist.gd" id="1_xcf5m"]
+[ext_resource type="Texture2D" uid="uid://c2x3fp7artgu7" path="res://character/cultist.png" id="2_14kar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0abi"]
+atlas = ExtResource("2_14kar")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psivp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0abi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lnhco"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xcf5m"]
+radius = 65.19202
+
+[node name="Cultist" type="CharacterBody2D" unique_id=1462173413]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_xcf5m")
+enemy_type = "player"
+stop_distance = 80
+
+[node name="enemy_sprite" type="AnimatedSprite2D" parent="." unique_id=2029519374]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_psivp")
+frame_progress = 0.616925
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=2005417625]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=2077042643]
+shape = SubResource("CircleShape2D_lnhco")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=331350459]
+shape = SubResource("CircleShape2D_xcf5m")
+debug_color = Color(0.40896234, 0.5925763, 0.381113, 0.41960785)
+
+[node name="color_timer" type="Timer" parent="." unique_id=779649215]
+
+[node name="throwing_timer" type="Timer" parent="." unique_id=213853519]
+wait_time = 3.0
+
+[node name="teleport_timer" type="Timer" parent="." unique_id=2003329658]
+one_shot = true
+
+[connection signal="timeout" from="color_timer" to="." method="_on_color_timer_timeout"]
+[connection signal="timeout" from="throwing_timer" to="." method="_on_throwing_timer_timeout"]
+[connection signal="timeout" from="teleport_timer" to="." method="_on_teleport_timer_timeout"]

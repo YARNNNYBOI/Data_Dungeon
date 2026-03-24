@@ -163,7 +163,6 @@ func _physics_process(delta):
 # ==================================================
 
 func _process(delta):
-
 	if GlobalScript.weapon_swing and !isWeaponInUse:
 		pass
 	else:
@@ -216,18 +215,14 @@ func update_animation():
 func take_damage(amount, source_position, knockback_decay, strenght_amount):
 
 	GlobalScript.health -= amount
-
 	damage_effect()
-
-	print("Health:", GlobalScript.health)
-
 	check_status()
 
-	var direction = (global_position - source_position).normalized()
-	var strength = strenght_amount
-
-	knockback_velocity = direction * strength
-	is_knockedback = true
+	# Only apply knockback if it exists
+	if strenght_amount != null and strenght_amount > 0:
+		var direction = (global_position - source_position).normalized()
+		knockback_velocity = direction * strenght_amount
+		is_knockedback = true
 
 
 func damage_effect():
@@ -259,10 +254,12 @@ func toggle_inventory():
 		GlobalScript.can_move = false
 		inventory_instance.visible = true
 		GlobalScript.using_pedestal = true
+		inventory_instance.update_inventory_grid()
 	else:
 		GlobalScript.can_move = true
 		inventory_instance.visible = false
 		GlobalScript.using_pedestal = false
+		inventory_instance.update_inventory_grid()
 		
 # ==================================================
 # UI EVENTS
@@ -280,7 +277,6 @@ func _on_button_1_pressed():
 
 	info_screen.visible = false
 	GlobalScript.can_move = true
-
 
 func _on_texture_button_pressed() -> void:
 	GlobalScript.health = health

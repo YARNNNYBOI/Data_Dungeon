@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cwwqfyik65pbx"]
+
+[ext_resource type="Script" uid="uid://ngcjgyrnkvkr" path="res://character/ghost.gd" id="1_kw1tx"]
+[ext_resource type="Texture2D" uid="uid://bnbkahx8db4b6" path="res://character/ghostproto.png" id="2_yji4u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjvsp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yji4u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gdahh"]
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gi2pl"]
+radius = 65.19202
+
+[node name="ghost" type="CharacterBody2D" unique_id=1705237956]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_kw1tx")
+stop_distance = 100
+
+[node name="enemy_sprite" type="AnimatedSprite2D" parent="." unique_id=384441065]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_hjvsp")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=303423707]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1476729118]
+shape = SubResource("CircleShape2D_gdahh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1451952883]
+shape = SubResource("CircleShape2D_gi2pl")
+debug_color = Color(0.40896234, 0.5925763, 0.381113, 0.41960785)
+
+[node name="color_timer" type="Timer" parent="." unique_id=1249883459]
+
+[node name="throwing_timer" type="Timer" parent="." unique_id=275581814]
+wait_time = 3.0
+
+[connection signal="timeout" from="color_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="throwing_timer" to="." method="_on_throwing_timer_timeout"]

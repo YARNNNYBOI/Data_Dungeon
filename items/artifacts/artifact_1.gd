@@ -25,18 +25,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and isPlayerinArea:
 		if control.visible:
-			GlobalScript.player_artifacts.append(item_name)
-			GlobalScript.player_artifact_path.append(sprite_2d.texture.resource_path)
-			GlobalScript.player_artifacts_group.append(qualorquan)
-			print("artifact collected: ", item_name)
-			print("artifact path: ", GlobalScript.player_artifact_path)
+			GlobalScript.player_artifacts[item_name] = {
+				"path" : sprite_2d.texture,
+				"type" : qualorquan}
 			if show_info:
 				check_body(player)
 			queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("players"):
-		print("artifact near")
 		show_info = true
 		player = body
 		isPlayerinArea = true
@@ -44,15 +41,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("players"):
-		print("artifact no more near")
 		isPlayerinArea = false
 
 func check_body(body:Node2D):
-	print("about tochecki not")
 	if body.is_in_group("players"):
-		print("checing info")
 		if body.has_method("show_info_screen"):
-			print("showing info")
 			body.show_info_screen(title_text, description_text)
 	
 func get_item_group() -> String:

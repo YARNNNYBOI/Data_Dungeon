@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c7s8wv3nqyq41"]
+
+[ext_resource type="Texture2D" uid="uid://dn1wexeywktt6" path="res://weapon/Ghost_goo.png" id="1_ca120"]
+[ext_resource type="Script" uid="uid://glhcwqwga4fd" path="res://character/abilities/ghost_goo.gd" id="1_lr55x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr55x"]
+size = Vector2(160.00003, 160.00003)
+
+[node name="ghost_goo" type="Area2D" unique_id=1811159425]
+z_index = -1
+texture_filter = 1
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_lr55x")
+enemy_type = "player"
+damage_amount = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=624669069]
+scale = Vector2(8, 8)
+texture = ExtResource("1_ca120")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=148366358]
+position = Vector2(3.8146954e-06, 3.8146954e-06)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_lr55x")
+debug_color = Color(0.9884743, 0, 0.30678663, 0.41960785)
+
+[node name="disapear_timer" type="Timer" parent="." unique_id=1989137078]
+wait_time = 5.0
+one_shot = true
+
+[node name="windup" type="Timer" parent="." unique_id=1684332236]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="disapear_timer" to="." method="_on_disapear_timer_timeout"]
+[connection signal="timeout" from="windup" to="." method="_on_windup_timeout"]

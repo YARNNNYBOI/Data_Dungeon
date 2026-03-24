@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c73jsyqm7me3r" path="res://stages/barriers.tscn" id="9_mghc5"]
 [ext_resource type="PackedScene" uid="uid://bvil6hkchwhbe" path="res://character/enemy.tscn" id="10_evnfx"]
 [ext_resource type="PackedScene" uid="uid://wm8bjt6ey0p1" path="res://items/vase.tscn" id="12_b423g"]
+[ext_resource type="PackedScene" uid="uid://cwwqfyik65pbx" path="res://character/ghost.tscn" id="13_7v0xd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b423g"]
 texture = ExtResource("2_85jxm")
@@ -533,7 +534,7 @@ position = Vector2(561, 76)
 room_group = "1"
 
 [node name="enemy2" parent="." unique_id=1664407275 instance=ExtResource("10_evnfx")]
-position = Vector2(556, -221)
+position = Vector2(498, -269)
 room_group = "2"
 
 [node name="enemy3" parent="." unique_id=1817082378 instance=ExtResource("10_evnfx")]
@@ -551,6 +552,10 @@ position = Vector2(952, -327)
 
 [node name="vase4" parent="." unique_id=1523215386 instance=ExtResource("12_b423g")]
 position = Vector2(856, -328)
+
+[node name="ghost" parent="." unique_id=1705237956 instance=ExtResource("13_7v0xd")]
+position = Vector2(620, -305)
+room_group = "2"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="room1" to="." method="_on_room_1_body_entered"]

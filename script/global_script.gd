@@ -1,6 +1,5 @@
 extends Node
-
-
+signal artifact_removed
 #ito lng tignan mo faith :DDD
 var weapon_number : int = 0
 
@@ -35,12 +34,25 @@ var isOnStage1Enemy = []
 var room1enemies : int
 var isRoomOnClear = false
 
-var player_artifacts = []
-var player_artifacts_group = []
-var player_artifact_path = []
+var player_artifacts = {
+}
 
+var current_pedestal = false
 var using_pedestal = false
 var on_pedestal = false
+
+var pedestal_type = {
+	"p1" : ["quali", false],
+	"p2" : ["quali", false],
+	"p3" : ["quali", false],
+	"p4" : ["quanti", false],
+	"p5" : ["quanti", false],
+	"p6" : ["quanti", false],
+}
+
+#stores the value for the artifacts inside the pedestals
+var pedestals = {
+}
 
 var can_move = true
 var main_menu_pos = Vector2(-64.0,-24.0)

@@ -2,9 +2,65 @@
 
 [ext_resource type="Script" uid="uid://coi53wed2vgww" path="res://weapon/projectile.gd" id="1_wadrg"]
 [ext_resource type="Texture2D" uid="uid://cait7iafulfh3" path="res://weapon/sprites/arrow.png" id="2_k7v7u"]
+[ext_resource type="Texture2D" uid="uid://c81lmvqlr0cci" path="res://weapon/cultistorb.png" id="3_vxeme"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7v7u"]
 size = Vector2(6, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxa1h"]
+atlas = ExtResource("2_k7v7u")
+region = Rect2(0, 0, 19, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlkex"]
+atlas = ExtResource("3_vxeme")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmjb7"]
+atlas = ExtResource("3_vxeme")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns17m"]
+atlas = ExtResource("3_vxeme")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlu8k"]
+atlas = ExtResource("3_vxeme")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbdum"]
+atlas = ExtResource("3_vxeme")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rs4ce"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxa1h")
+}],
+"loop": true,
+"name": &"arrow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlkex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmjb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns17m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlu8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbdum")
+}],
+"loop": true,
+"name": &"purpleorb",
+"speed": 5.0
+}]
 
 [node name="projectile" type="Area2D" unique_id=1017007937]
 script = ExtResource("1_wadrg")
@@ -13,10 +69,11 @@ script = ExtResource("1_wadrg")
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_k7v7u")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1002254095]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=254382243]
 texture_filter = 1
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_k7v7u")
-offset = Vector2(7.6293945e-06, 4.7683716e-07)
+sprite_frames = SubResource("SpriteFrames_rs4ce")
+animation = &"arrow"
+frame_progress = 0.58218473
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
