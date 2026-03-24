@@ -68,10 +68,6 @@ var sprite_instance: AnimatedSprite2D
 # ==================================================
 
 func _ready() -> void:
-<<<<<<< HEAD
-	
-=======
->>>>>>> c1e670fe734a595e38525daa039ab7d219ff0e24
 	GlobalScript.can_move = true
 	cooldown_bar.max_value = weapon_timer.wait_time
 
@@ -281,7 +277,6 @@ func _on_button_1_pressed():
 
 	info_screen.visible = false
 	GlobalScript.can_move = true
-
 
 func _on_texture_button_pressed() -> void:
 	GlobalScript.health = health

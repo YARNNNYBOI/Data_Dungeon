@@ -41,10 +41,4 @@ func _on_gate_5_body_entered(body: Node2D) -> void:
 
 func _on_gate_6_body_entered(body: Node2D) -> void:
 	if GlobalScript.player_artifacts.size() == 5 and body.is_in_group("players"):
-<<<<<<< HEAD
 		get_tree().change_scene_to_file("res://stages/stage_6.tscn")
-=======
-		get_tree().change_scene_to_file("res://stages/stage_5.tscn")
-		
-		
->>>>>>> c1e670fe734a595e38525daa039ab7d219ff0e24
