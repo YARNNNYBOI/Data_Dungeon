@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://curav4vld1fjd"
-path="res://.godot/imported/ely_movemens.png-d8cdf1d08c1c723611ac375a192a672b.ctex"
+uid="uid://b1xrqq8kwwnyv"
+path="res://.godot/imported/jm_movement.png-7094830631c4311a6a687df451011d61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/player_spriite/ely_movemens.png"
-dest_files=["res://.godot/imported/ely_movemens.png-d8cdf1d08c1c723611ac375a192a672b.ctex"]
+source_file="res://character/player_spriite/jm_movement.png"
+dest_files=["res://.godot/imported/jm_movement.png-7094830631c4311a6a687df451011d61.ctex"]
 
 [params]
 

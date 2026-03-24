@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://b24iqjtvgvns3"]
 
-[ext_resource type="Texture2D" uid="uid://bow1jrs3swd2c" path="res://character/player_spriite/Castro.png" id="1_5doxx"]
+[ext_resource type="Texture2D" uid="uid://b1xrqq8kwwnyv" path="res://character/player_spriite/jm_movement.png" id="1_5doxx"]
 [ext_resource type="Texture2D" uid="uid://dp5r6ny31mir5" path="res://character/player_spriite/Castro_left.png" id="2_nk40b"]
 [ext_resource type="Texture2D" uid="uid://bve6ayuiganr1" path="res://character/player_spriite/Castro_right.png" id="3_svf1y"]
 [ext_resource type="Texture2D" uid="uid://cx0vwtx1kwdr" path="res://character/player_spriite/Castro_up.png" id="4_edrdu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aypkh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5doxx"]
 atlas = ExtResource("1_5doxx")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hhoun"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk40b"]
 atlas = ExtResource("1_5doxx")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bdyh8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_svf1y"]
 atlas = ExtResource("1_5doxx")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qe16m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_edrdu"]
 atlas = ExtResource("1_5doxx")
 region = Rect2(96, 0, 32, 32)
 
@@ -73,16 +73,16 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aypkh")
+"texture": SubResource("AtlasTexture_5doxx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hhoun")
+"texture": SubResource("AtlasTexture_nk40b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bdyh8")
+"texture": SubResource("AtlasTexture_svf1y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qe16m")
+"texture": SubResource("AtlasTexture_edrdu")
 }],
 "loop": true,
 "name": &"walking_down",
@@ -144,5 +144,4 @@ animations = [{
 texture_filter = 1
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_dkowc")
-animation = &"walking_up"
-frame_progress = 0.6171445
+animation = &"walking_down"

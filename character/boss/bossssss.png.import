@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bow1jrs3swd2c"
-path="res://.godot/imported/Castro.png-5fc612d03723182b322db4d4cd33ca6a.ctex"
+uid="uid://dh4tu6t38c8l0"
+path="res://.godot/imported/bossssss.png-1975a29fc1a7308e6e13c86ec4698ffd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/player_spriite/Castro.png"
-dest_files=["res://.godot/imported/Castro.png-5fc612d03723182b322db4d4cd33ca6a.ctex"]
+source_file="res://character/boss/bossssss.png"
+dest_files=["res://.godot/imported/bossssss.png-1975a29fc1a7308e6e13c86ec4698ffd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://curav4vld1fjd"
-path="res://.godot/imported/ely_movemens.png-d8cdf1d08c1c723611ac375a192a672b.ctex"
+uid="uid://ijmyubrogp7k"
+path="res://.godot/imported/retry_button_hover.png-47ef1090992d550817b7893408c1a135.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/player_spriite/ely_movemens.png"
-dest_files=["res://.godot/imported/ely_movemens.png-d8cdf1d08c1c723611ac375a192a672b.ctex"]
+source_file="res://character/retry_button_hover.png"
+dest_files=["res://.godot/imported/retry_button_hover.png-47ef1090992d550817b7893408c1a135.ctex"]
 
 [params]
 
