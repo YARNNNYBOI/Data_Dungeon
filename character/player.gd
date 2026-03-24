@@ -279,6 +279,6 @@ func _on_button_1_pressed():
 	GlobalScript.can_move = true
 
 func _on_texture_button_pressed() -> void:
-	GlobalScript.health = health
+	GlobalScript.health = 100
 	GlobalScript.speed = speed
 	get_tree().change_scene_to_file("res://stages/main_area.tscn")
