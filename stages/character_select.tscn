@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b63b6k4lkb6ex" path="res://stages/character_select.gd" id="1_tddig"]
 [ext_resource type="Texture2D" uid="uid://cm335dfgc5tyl" path="res://GUI/character_select/bg_character_selection.png" id="2_qvlag"]
 [ext_resource type="Texture2D" uid="uid://dkhtglc804mew" path="res://GUI/character_select/Name_Frame2.png" id="3_3vpx3"]
-[ext_resource type="Texture2D" uid="uid://dsb265fpva2tc" path="res://GUI/character_select/CharacterFrame.png" id="3_507mx"]
+[ext_resource type="Texture2D" uid="uid://dsb265fpva2tc" path="res://GUI/character_select/characterFrame.png" id="3_507mx"]
 [ext_resource type="PackedScene" uid="uid://djounvle46g20" path="res://character/player_spriite/faith.tscn" id="3_qvlag"]
 [ext_resource type="Texture2D" uid="uid://1fq0sgw8iqj6" path="res://GUI/character_select/DescriptionFrame.png" id="4_qvlag"]
 [ext_resource type="FontFile" uid="uid://qr5vqt7iuss" path="res://GUI/character_select/PressStart2P-Regular.ttf" id="6_507mx"]
@@ -101,20 +101,21 @@ scale = Vector2(6, 6)
 texture = ExtResource("4_qvlag")
 
 [node name="Label" type="Label" parent="des_frame" unique_id=1445384221]
-visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.49800003
 anchor_top = 0.5
 anchor_right = 0.49800003
 anchor_bottom = 0.5
-offset_left = -30.522665
-offset_top = -17.333334
-offset_right = 2.2224274
-offset_bottom = 2.666666
+offset_left = -30.689331
+offset_top = -16.666668
+offset_right = 6.467537
+offset_bottom = 3.333332
 scale = Vector2(1.7, 1.7)
 theme_override_fonts/font = ExtResource("8_y007s")
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 3
+autowrap_mode = 1
 
 [node name="go_right" type="TextureButton" parent="." unique_id=982218137]
 texture_filter = 1

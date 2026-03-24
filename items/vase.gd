@@ -14,6 +14,6 @@ func _ready() -> void:
 		
 func take_damage(amount, source_position, knockback_decay, strenght_amount):
 	health -= amount
-	print("Health:", health)
+	print(self.name, health)
 	get_tree().current_scene.add_child(on_item)
 	queue_free()

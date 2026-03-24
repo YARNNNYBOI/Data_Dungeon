@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 GlobalScript="*uid://dker4utpimps1"
 InventoryScript="*uid://b2yrurrtvkb3r"
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
 [input]
 
 move_left={
@@ -60,4 +65,3 @@ interact={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="mobile"

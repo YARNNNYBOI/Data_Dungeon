@@ -33,7 +33,6 @@ func _process(delta: float) -> void:
 			room1clear = true
 			remove_barriers()
 			
-			
 		room2_enem = room2_enem.filter(func(n):
 			return is_instance_valid(n)
 		)

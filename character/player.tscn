@@ -27,7 +27,7 @@ position = Vector2(-1.5258789e-05, 4.7683716e-07)
 shape = SubResource("CircleShape2D_hhoun")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=831984285]
-zoom = Vector2(5, 5)
+zoom = Vector2(4, 4)
 
 [node name="Timer" type="Timer" parent="." unique_id=733964008]
 one_shot = true

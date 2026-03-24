@@ -59,7 +59,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("players") and body.has_method("toggle_inventory"):
-		InventoryScript.can_access_inventory = false
+		InventoryScriptcan_access_inventory = false
 		player = null
 		GlobalScript.current_pedestal = null
 		label.visible = false

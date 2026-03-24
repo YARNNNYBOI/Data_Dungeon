@@ -128,7 +128,7 @@ position = Vector2(664, 168)
 artifact_name = "Artifact_1"
 artifact_position = Vector2(664, 192)
 artifact_texture = ExtResource("11_o4n7p")
-quanorquan = "quan"
+quanorquan = "quali"
 title_text = "Artifact of Measurement"
 description_text = "A relic representing the measurement of variables through numerical data such as counts, quantities, and statistical values."
 
