@@ -1,16 +1,18 @@
 extends Node2D
 @onready var tile_map: TileMap = $TileMap
 
-@onready var barriers = [$Barriers1, $Barriers2, $Barriers3, $Barriers4]
+@onready var barriers = [$Barriers1, $Barriers2, $Barriers3]
 @onready var barrier_location = [Vector2(328,264),Vector2(424,168),Vector2(568,168),Vector2(760,168)]
 @onready var chest: Area2D = $Chest
 
+@onready var last_barrier = $Barriers4
 
 @onready var room1_enem = get_tree().get_nodes_in_group("1")
 @onready var room2_enem = get_tree().get_nodes_in_group("2")
 
 @onready var room1clear = false
 @onready var room2clear = false
+
 
 func _ready() -> void:
 	
@@ -55,6 +57,11 @@ func place_barriers():
 	for i in range(barriers.size()):
 		barriers[i].global_position = barrier_location[i]
 		
+		
+func remove_last_barrier():
+	last_barrier.queue_free()
+	print("barrier removed")
+
 func _on_area_2d_body_entered(body: Node) -> void:
 		if check_entered(body) and room1_enem.size() > 0:
 			for i in room1_enem:
@@ -70,7 +77,6 @@ func _on_room_2_body_entered(body: Node2D) -> void:
 				i.visible = true
 				i.chasing = true
 				place_barriers()
-
 
 func _on_nextstage_body_entered(body: Node2D) -> void:
 	if body.is_in_group("players"):

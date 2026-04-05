@@ -41,6 +41,7 @@ one_shot = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=196465068]
 
 [node name="Death Screen" type="Control" parent="CanvasLayer" unique_id=722250785]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

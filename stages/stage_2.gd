@@ -3,12 +3,13 @@ extends Node2D
 @onready var chest: Area2D = $Chest
 
 
-@onready var barriers = [$Barriers1, $Barriers2, $Barriers3, $Barriers4, $Barriers5,$Barriers6]
+@onready var barriers = [$Barriers1, $Barriers2, $Barriers3, $Barriers4, $Barriers5]
 @onready var barrier_location = []
 @onready var room1_enem = get_tree().get_nodes_in_group("1")
 @onready var room2_enem = get_tree().get_nodes_in_group("2")
 @onready var room3_enem = get_tree().get_nodes_in_group("3")
 
+@onready var last_barrier = $Barriers6
 
 @onready var room1clear = false
 @onready var room2clear = false
@@ -60,6 +61,7 @@ func  _process(delta: float) -> void:
 			remove_barriers()
 			chest.show_chest()
 			
+
 func check_entered(body):
 	if body.is_in_group("players"):  # optional filter
 		return true
@@ -70,6 +72,9 @@ func remove_barriers():
 	for barrier in barriers:
 		barrier.global_position = Vector2(0,0)
 		
+func remove_last_barrier():
+	last_barrier.queue_free()
+	
 func place_barriers():
 	for i in range(barriers.size()):
 		barriers[i].global_position = barrier_location[i]
