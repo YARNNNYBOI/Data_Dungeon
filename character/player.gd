@@ -132,6 +132,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact") and GlobalScript.on_pedestal:
 		toggle_inventory()
 
+#========================================================================
 	var input_vector = Vector2.ZERO
 
 	if GlobalScript.can_move:

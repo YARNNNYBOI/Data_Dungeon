@@ -24,9 +24,6 @@ texture = ExtResource("2_2px16")
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_61gls")
 
-[node name="Artifact_display" type="Sprite2D" parent="." unique_id=2021356297]
-position = Vector2(0, -8)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1204520944]
 
 [node name="Inventory" type="TextureRect" parent="CanvasLayer" unique_id=1993358895]

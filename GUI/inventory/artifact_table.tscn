@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ode77i6ernl7"]
+
+[ext_resource type="Script" uid="uid://df1rnhbohx8l7" path="res://items/table/artifact_table.gd" id="1_bflmf"]
+[ext_resource type="Texture2D" uid="uid://6j1jmoyeulyq" path="res://items/table/table.png" id="2_8hvy0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lv1m"]
+size = Vector2(84, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjujq"]
+size = Vector2(64, 26)
+
+[node name="artifact_table" type="StaticBody2D" unique_id=1386029957]
+script = ExtResource("1_bflmf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2040271641]
+texture_filter = 1
+texture = ExtResource("2_8hvy0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2059511768]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1884063622]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1lv1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=750790426]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_wjujq")
+debug_color = Color(0.914504, 0.18659353, 0.561509, 0.41960785)

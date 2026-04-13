@@ -1,5 +1,6 @@
 extends Node
-signal artifact_removed
+
+
 #ito lng tignan mo faith :DDD
 var weapon_number : int = 0
 
