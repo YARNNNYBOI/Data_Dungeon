@@ -21,7 +21,7 @@ extends CharacterBody2D
 @onready var health_bar: ProgressBar = $CanvasLayer/GUI/health
 
 # INVENTORY PREFAB
-@onready var inventory_scene = preload("res://GUI/inventory.tscn")
+@onready var inventory_scene = preload("res://GUI/inventory/inventory.tscn")
 var inventory_instance
 
 # ==================================================
@@ -255,12 +255,12 @@ func toggle_inventory():
 		GlobalScript.can_move = false
 		inventory_instance.visible = true
 		GlobalScript.using_pedestal = true
-		inventory_instance.update_inventory_grid()
+		inventory_instance.ifInventoryIsOpened()
 	else:
 		GlobalScript.can_move = true
 		inventory_instance.visible = false
 		GlobalScript.using_pedestal = false
-		inventory_instance.update_inventory_grid()
+		inventory_instance.ifInventoryIsClosed()
 		
 # ==================================================
 # UI EVENTS

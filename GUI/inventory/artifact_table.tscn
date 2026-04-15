@@ -26,3 +26,13 @@ shape = SubResource("RectangleShape2D_1lv1m")
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_wjujq")
 debug_color = Color(0.914504, 0.18659353, 0.561509, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=2067773532]
+offset_left = -5.0
+offset_top = -48.0
+offset_right = 35.0
+offset_bottom = -25.0
+text = "E"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
