@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://byddkt67ftjxn" path="res://slot.gd" id="2_quatq"]
 [ext_resource type="Texture2D" uid="uid://0f7fnqkosjbb" path="res://items/artifacts/artifact1.png" id="3_s2dgt"]
 [ext_resource type="Texture2D" uid="uid://6pv7ydddvf1e" path="res://GUI/inventory/tableui.png" id="4_5emqn"]
+[ext_resource type="Script" uid="uid://b57t0y63h7gjv" path="res://table_slot.gd" id="6_s2dgt"]
 
 [node name="inventory" type="Control" unique_id=1714270003]
 layout_mode = 3
@@ -219,6 +220,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("4_5emqn")
 
 [node name="tb_1" type="TextureRect" parent="table_inventory" unique_id=1719774138]
+modulate = Color(1, 0, 0, 1)
 layout_mode = 0
 offset_left = 2.1999938
 offset_top = 0.9999988
@@ -226,6 +228,7 @@ offset_right = 15.9999895
 offset_bottom = 14.8
 texture = ExtResource("3_s2dgt")
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="tb_2" type="TextureRect" parent="table_inventory" unique_id=504908411]
 layout_mode = 0
@@ -235,6 +238,7 @@ offset_right = 31.799988
 offset_bottom = 14.800001
 texture = ExtResource("3_s2dgt")
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="tb_3" type="TextureRect" parent="table_inventory" unique_id=1303750633]
 layout_mode = 0
@@ -244,6 +248,7 @@ offset_right = 47.99999
 offset_bottom = 15.000002
 texture = ExtResource("3_s2dgt")
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="tb_4" type="TextureRect" parent="table_inventory" unique_id=538242267]
 layout_mode = 0
@@ -252,6 +257,7 @@ offset_top = 1.2000003
 offset_right = 63.999985
 offset_bottom = 15.000002
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="tb_5" type="TextureRect" parent="table_inventory" unique_id=1250379207]
 layout_mode = 0
@@ -260,6 +266,7 @@ offset_top = 1.2000004
 offset_right = 79.999985
 offset_bottom = 15.000002
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="tb_6" type="TextureRect" parent="table_inventory" unique_id=1655646553]
 layout_mode = 0
@@ -268,6 +275,7 @@ offset_top = 16.999998
 offset_right = 15.9999895
 offset_bottom = 30.8
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="tb_7" type="TextureRect" parent="table_inventory" unique_id=1179703801]
 layout_mode = 0
@@ -276,6 +284,7 @@ offset_top = 16.999998
 offset_right = 31.799988
 offset_bottom = 30.8
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="tb_8" type="TextureRect" parent="table_inventory" unique_id=727991331]
 layout_mode = 0
@@ -284,6 +293,7 @@ offset_top = 16.999998
 offset_right = 47.99999
 offset_bottom = 30.8
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="tb_9" type="TextureRect" parent="table_inventory" unique_id=974169431]
 layout_mode = 0
@@ -292,6 +302,7 @@ offset_top = 16.999998
 offset_right = 63.999985
 offset_bottom = 30.8
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="tb_10" type="TextureRect" parent="table_inventory" unique_id=516130689]
 layout_mode = 0
@@ -300,6 +311,7 @@ offset_top = 17.0
 offset_right = 79.999985
 offset_bottom = 30.800003
 expand_mode = 2
+script = ExtResource("6_s2dgt")
 
 [node name="Button" type="Button" parent="." unique_id=570356235]
 layout_mode = 0
@@ -308,3 +320,5 @@ offset_top = 297.0
 offset_right = 648.0
 offset_bottom = 336.0
 text = "PRESSSO MEE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

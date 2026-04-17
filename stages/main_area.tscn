@@ -189,6 +189,12 @@ position = Vector2(40, 0)
 
 [node name="artifact_table" parent="." unique_id=1386029957 instance=ExtResource("9_nd8gt")]
 position = Vector2(-120, -272)
+research_type = "quali"
+table_bool = true
+
+[node name="artifact_table2" parent="." unique_id=1863024212 instance=ExtResource("9_nd8gt")]
+position = Vector2(32, -272)
+research_type = "quan"
 
 [connection signal="body_entered" from="gate1" to="." method="_on_gate_1_body_entered"]
 [connection signal="body_entered" from="gate2" to="." method="_on_gate_2_body_entered"]

@@ -38,18 +38,12 @@ var isRoomOnClear = false
 var player_artifacts = {
 }
 
+var isTableOneSelected : bool
 var current_pedestal = false
 var using_pedestal = false
 var on_pedestal = false
+var tableType = ""
 
-var pedestal_type = {
-	"p1" : ["quali", false],
-	"p2" : ["quali", false],
-	"p3" : ["quali", false],
-	"p4" : ["quanti", false],
-	"p5" : ["quanti", false],
-	"p6" : ["quanti", false],
-}
 
 #stores the value for the artifacts inside the pedestals
 var pedestals = {
@@ -63,5 +57,3 @@ var weapon_swing = false
 var potions = ["health", "speed"]
 var potion_effects = [[25,0],[0,5]]
 var potionstext = ["res://items/potions/health_potion.png", "res://items/potions/speed_potion.png"]
-
-var isOnPillar: bool = false

@@ -11,6 +11,8 @@ size = Vector2(64, 26)
 
 [node name="artifact_table" type="StaticBody2D" unique_id=1386029957]
 script = ExtResource("1_bflmf")
+research_type = null
+table_bool = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2040271641]
 texture_filter = 1
