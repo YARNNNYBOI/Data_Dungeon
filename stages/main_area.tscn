@@ -78,7 +78,7 @@ color = Color(0, 0, 0.14117648, 1)
 [node name="player" parent="." unique_id=1556820961 instance=ExtResource("5_dpmqb")]
 position = Vector2(-56, 64)
 
-[node name="Barriers" parent="." unique_id=1107646465 instance=ExtResource("6_ite7n")]
+[node name="Barriers1" parent="." unique_id=1107646465 instance=ExtResource("6_ite7n")]
 position = Vector2(-200, 24)
 rotation = -1.5707964
 

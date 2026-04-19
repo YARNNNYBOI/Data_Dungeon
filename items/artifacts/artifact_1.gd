@@ -10,6 +10,7 @@ class_name artifact
 @export var qualorquan : String
 @export var title_text : String
 @export var description_text : String
+@export var size : Vector2
 
 @onready var player
 @onready var show_info = false
@@ -30,8 +31,9 @@ func _process(delta: float) -> void:
 				"type" : qualorquan}
 			if show_info:
 				check_body(player)
-			if get_tree().current_scene.has_method("remove_last_barrier"):
-				get_tree().current_scene.remove_last_barrier()
+			if get_tree().current_scene.has_method("check_artifact_status"):
+				get_tree().current_scene.collected_artifact += 1
+				get_tree().current_scene.check_artifact_status()
 			queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

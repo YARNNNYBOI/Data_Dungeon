@@ -10,11 +10,11 @@ var speed = 100
 var character_sprite = ["res://character/player_spriite/jm.tscn","res://character/player_spriite/faith.tscn","res://character/player_spriite/ely.tscn","res://character/player_spriite/tine.tscn","res://character/player_spriite/clark.tscn","res://character/player_spriite/rose.tscn"]
 
 var weapon = ["res://weapon/weapon.tscn", "res://weapon/weapon_range.tscn","res://weapon/weapon_range.tscn", "res://weapon/weapon.tscn","res://weapon/weapon.tscn","res://weapon/weapon.tscn"]
-var weaponsprite = ["res://weapon/sprites/swordnijm(32x32).png","res://weapon/sprites/bow.png","res://weapon/sprites/staff(16x16).png","res://weapon/sprites/Scythe.png","res://weapon/sprites/swordnijm(32x32).png","res://weapon/sprites/picax.png"]
+var weaponsprite = ["res://weapon/sprites/swordnijm(32x32).png","res://weapon/sprites/bow.png","res://weapon/sprites/staff2.png","res://weapon/sprites/Scythe.png","res://weapon/sprites/swordnijm(32x32).png","res://weapon/sprites/picax.png"]
 var isOnStage1 = false
 
-var weapon_offset_right = [Vector2(16,-16),Vector2(15,-15),Vector2(-4,-15),Vector2(15,-15),Vector2(16,-16),Vector2(15,-15)]
-var weapon_offset_left = [Vector2(16,16),Vector2(15,-15),Vector2(4,-6),Vector2(15,15),Vector2(16,16),Vector2(15,15)]
+var weapon_offset_right = [Vector2(16,-16),Vector2(10,-16),Vector2(1,-16),Vector2(15,-15),Vector2(16,-16),Vector2(15,-15)]
+var weapon_offset_left = [Vector2(16,16),Vector2(10,-20),Vector2(1,-16),Vector2(15,15),Vector2(16,16),Vector2(15,15)]
 var weapon_scale = [Vector2(7,7),Vector2(6,6),Vector2(10,10),Vector2(7,7),Vector2(7,7),Vector2(5,5)]
 var weapon_damage = [400, 35, 50, 50, 30, 25]
 var weapon_cooldown = [1, 0.7, 1, 1.5, 0.5, 0.2]

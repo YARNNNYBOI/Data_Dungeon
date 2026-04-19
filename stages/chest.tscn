@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://jtm5sj2n8s0m"]
 
 [ext_resource type="Script" uid="uid://b8paniuxd0bbn" path="res://chest.gd" id="1_gp17e"]
-[ext_resource type="Texture2D" uid="uid://mn6sgeei7x2n" path="res://stages/tilesets/chest_close.png" id="2_gp17e"]
 [ext_resource type="Script" uid="uid://84i1e4o6ft7d" path="res://items/artifacts/artifact_1.gd" id="2_nhnst"]
 [ext_resource type="Texture2D" uid="uid://0f7fnqkosjbb" path="res://items/artifacts/artifact1.png" id="3_xvhrh"]
+[ext_resource type="Texture2D" uid="uid://wuyan661exef" path="res://stages/tilesets/chest.png" id="4_nhnst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjx8v"]
 size = Vector2(26, 28)
@@ -33,7 +33,7 @@ item = SubResource("PackedScene_ypg8g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1434317629]
 texture_filter = 1
-texture = ExtResource("2_gp17e")
+texture = ExtResource("4_nhnst")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1709816993]
 shape = SubResource("RectangleShape2D_nhnst")

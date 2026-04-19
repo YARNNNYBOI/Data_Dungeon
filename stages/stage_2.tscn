@@ -8,11 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://bceyvrenqbi0h" path="res://stages/tilesets/stage2/second_stage_portal_room.png" id="5_evnfx"]
 [ext_resource type="Texture2D" uid="uid://ch46adxx3ufpg" path="res://stages/tilesets/stage2/second_stage_starting_room.png" id="6_l444g"]
 [ext_resource type="PackedScene" uid="uid://jtm5sj2n8s0m" path="res://stages/chest.tscn" id="8_013ri"]
-[ext_resource type="Texture2D" uid="uid://3ugeh71jhsqy" path="res://items/artifacts/artifact2.png" id="9_l444g"]
+[ext_resource type="Texture2D" uid="uid://bjxl1cgue1led" path="res://items/artifacts/quantitative/statisticalCompass.png" id="9_jvs2s"]
 [ext_resource type="PackedScene" uid="uid://c73jsyqm7me3r" path="res://stages/barriers.tscn" id="9_mghc5"]
 [ext_resource type="PackedScene" uid="uid://bvil6hkchwhbe" path="res://character/enemy.tscn" id="10_evnfx"]
 [ext_resource type="PackedScene" uid="uid://wm8bjt6ey0p1" path="res://items/vase.tscn" id="12_b423g"]
 [ext_resource type="PackedScene" uid="uid://cwwqfyik65pbx" path="res://character/ghost.tscn" id="13_7v0xd"]
+[ext_resource type="Texture2D" uid="uid://n3qxs7l7bqxt" path="res://items/artifacts/quantitative/discreteDataTablet.png" id="14_ove85"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b423g"]
 texture = ExtResource("2_85jxm")
@@ -471,13 +472,14 @@ layer_0/tile_data = PackedInt32Array(65543, 0, 0, 131079, 262145, 0, 196615, 262
 position = Vector2(176, 56)
 
 [node name="Chest" parent="." unique_id=1775483302 instance=ExtResource("8_013ri")]
-position = Vector2(904, -264)
+position = Vector2(552, -264)
 artifact_name = "Artifact_2"
 artifact_position = Vector2(904, -240)
-artifact_texture = ExtResource("9_l444g")
+artifact_texture = ExtResource("9_jvs2s")
 quanorquan = "quan"
-title_text = "Hypothesis Testing Relic"
-description_text = "A research artifact used to test hypotheses through statistical analysis and empirical data"
+size = Vector2(0.5, 0.5)
+title_text = "Statistical Compass"
+description_text = "A tool used to analyze relationships between variables and identify patterns using statistical models."
 
 [node name="Area2D" type="Area2D" parent="." unique_id=170948968]
 
@@ -556,6 +558,14 @@ position = Vector2(856, -328)
 [node name="ghost" parent="." unique_id=1705237956 instance=ExtResource("13_7v0xd")]
 position = Vector2(620, -305)
 room_group = "2"
+
+[node name="Chest2" parent="." unique_id=16341853 instance=ExtResource("8_013ri")]
+position = Vector2(888, -264)
+artifact_texture = ExtResource("14_ove85")
+quanorquan = "quan"
+size = Vector2(0.5, 0.5)
+title_text = "Discrete Data Tablet"
+description_text = "An artifact representing countable numerical data such as the number of students passing an exam"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="room1" to="." method="_on_room_1_body_entered"]

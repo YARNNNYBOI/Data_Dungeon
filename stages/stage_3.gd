@@ -3,6 +3,7 @@ extends Node2D
 
 	
 @onready var chest: Area2D = $Chest
+@onready var chest_2: Area2D = $Chest2
 
 
 @onready var barriers = [$Barriers1, $Barriers2, $Barriers3, $Barriers4, $Barriers5,]
@@ -12,6 +13,8 @@ extends Node2D
 @onready var room3_enem = get_tree().get_nodes_in_group("3")
 
 @onready var last_barrier = $Barriers6
+
+@onready var collected_artifact = 0
 
 @onready var room1clear = false
 @onready var room2clear = false
@@ -53,6 +56,7 @@ func  _process(delta: float) -> void:
 		if room2_enem.size() == 0 and !room2clear:
 			print("Clear")
 			room2clear = true
+			chest.show_chest()
 			remove_barriers()
 			
 		room3_enem = room3_enem.filter(func(n):
@@ -62,7 +66,7 @@ func  _process(delta: float) -> void:
 			print("Clear")
 			room3clear = true
 			remove_barriers()
-			chest.show_chest()
+			chest_2.show_chest()
 			
 			
 func check_entered(body):
@@ -83,6 +87,10 @@ func place_barriers():
 		barriers[i].global_position = barrier_location[i]
 		
 
+func check_artifact_status():
+	print("artifacts collected: ", collected_artifact)
+	if collected_artifact == 2:
+		remove_last_barrier()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("players"):

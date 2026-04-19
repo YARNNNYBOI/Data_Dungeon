@@ -7,6 +7,7 @@
 size = Vector2(26, 28)
 
 [node name="artifact" type="Node2D" unique_id=966135498]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_jjx8v")
 item_name = "artifact_1"
 

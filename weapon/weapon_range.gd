@@ -69,6 +69,7 @@ func fire_projectile() -> void:
 
 	projectile.direction = dir
 	projectile.rotation = dir.angle()
+	projectile.target_position = target
 	projectile.global_position = global_position
 	projectile.damage = damage_amount
 	projectile.enemy_type = enemy_type
@@ -76,7 +77,10 @@ func fire_projectile() -> void:
 	projectile.strenght_amount = strenght_amount
 	projectile.speed = speed
 
-	projectile.get_node("AnimatedSprite2D").play("arrow")
+	if GlobalScript.weapon_number == 2:
+		projectile.get_node("AnimatedSprite2D").play("projectile_staff")
+	else:
+		projectile.get_node("AnimatedSprite2D").play("arrow")
 	get_tree().current_scene.add_child(projectile)
 
 # ==================================================
