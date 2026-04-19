@@ -72,17 +72,13 @@ func check_artifact_status():
 func _on_area_2d_body_entered(body: Node) -> void:
 		if check_entered(body) and room1_enem.size() > 0:
 			for i in room1_enem:
-				i.set_process(true)
-				i.visible = true
-				i.chasing = true
+				i.play_spawn_effect()
 				place_barriers()
 				
 func _on_room_2_body_entered(body: Node2D) -> void:
 		if check_entered(body) and room2_enem.size() > 0:
 			for i in room2_enem:
-				i.set_process(true)
-				i.visible = true
-				i.chasing = true
+				i.play_spawn_effect()
 				place_barriers()
 
 func _on_nextstage_body_entered(body: Node2D) -> void:

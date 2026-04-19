@@ -9,6 +9,8 @@ extends CharacterBody2D
 @onready var purple_orb_instance = preload("res://weapon/projectile.tscn")
 @onready var purple_orb_text = preload("res://weapon/cultistorb.png")
 
+@onready var is_spawning = false
+
 @export var stage = 2
 @export var stop_distance = 40
 @export var health = 100
@@ -89,6 +91,23 @@ func check_status():
 	if health <= 0:
 		GlobalScript.room1enemies += 1
 		queue_free()
+
+func play_spawn_effect():
+	print("here")
+	visible = true
+	is_spawning = true
+	chasing = false
+
+	if enemy_sprite.sprite_frames.has_animation("spawn"):
+		print("spawning")
+		enemy_sprite.play("spawn")
+		await enemy_sprite.animation_finished
+	else:
+		print("no animation sadly")
+
+	is_spawning = false
+	chasing = true
+	set_process(true) # ← ONLY enable after spawn
 
 
 func _on_color_timer_timeout() -> void:

@@ -37,37 +37,61 @@ func take_damage(amount: int, source_position: Vector2, knockback_decay, strengt
 	is_knockedback = true  # lock movement immediately
 
 func _physics_process(delta):
-	var move_vector = Vector2.ZERO
+		if is_spawning:
+			return  # 🚫 STOP EVERYTHING during spawn
 
-	# Only chase if not knocked back and player exists
-	if chasing and not is_knockedback and player:
-		var dir_to_player = player.global_position - global_position
-		if dir_to_player.length() > stop_distance:
-			move_vector = dir_to_player.normalized() * speed
+		var move_vector = Vector2.ZERO
 
-	# Add knockback
-	velocity = move_vector + knockback_velocity
-	enemy_sprite.play("walking")
-	move_and_slide()
+		if chasing and not is_knockedback and player:
+			var dir_to_player = player.global_position - global_position
+			if dir_to_player.length() > stop_distance:
+				move_vector = dir_to_player.normalized() * speed
 
-	# Reduce knockback gradually
-	if knockback_velocity.length() > 0:
-		enemy_sprite.play("idle")
-		is_knockedback = true
-		var decay = knockback_decay * delta
-		if knockback_velocity.length() <= decay:
-			knockback_velocity = Vector2.ZERO
-			is_knockedback = false
+		velocity = move_vector + knockback_velocity
+
+	# Only play animations if NOT spawning
+		if move_vector != Vector2.ZERO:
+			enemy_sprite.play("walking")
 		else:
-			knockback_velocity -= knockback_velocity.normalized() * decay
-		
-	# Rotate weapon toward player
-	if player:
-		enemy_weapon.look_at(player.global_position)
+			enemy_sprite.play("idle")
+
+		move_and_slide()
+
+		if knockback_velocity.length() > 0:
+			enemy_sprite.play("idle")
+			is_knockedback = true
+			var decay = knockback_decay * delta
+			if knockback_velocity.length() <= decay:
+				knockback_velocity = Vector2.ZERO
+				is_knockedback = false
+			else:
+				knockback_velocity -= knockback_velocity.normalized() * decay
+
+		if player:
+			enemy_weapon.look_at(player.global_position)
 
 func damage_effect():
 	enemy_sprite.modulate = Color(1.0, 0.078, 0.082, 1.0)  # white
 	color_timer.start()
+
+var is_spawning = false
+
+func play_spawn_effect():
+	print("here")
+	visible = true
+	is_spawning = true
+	chasing = false
+
+	if enemy_sprite.sprite_frames.has_animation("spawn"):
+		print("spawning")
+		enemy_sprite.play("spawn")
+		await enemy_sprite.animation_finished
+	else:
+		print("no animation sadly")
+
+	is_spawning = false
+	chasing = true
+	set_process(true) # ← ONLY enable after spawn
 
 func check_status():
 	if health <= 0:

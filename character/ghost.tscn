@@ -2,15 +2,76 @@
 
 [ext_resource type="Script" uid="uid://ngcjgyrnkvkr" path="res://character/ghost.gd" id="1_kw1tx"]
 [ext_resource type="Texture2D" uid="uid://bnbkahx8db4b6" path="res://character/ghostproto.png" id="2_yji4u"]
+[ext_resource type="Texture2D" uid="uid://dopweqdsi11w6" path="res://effects/spawn1.png" id="3_x10bb"]
+[ext_resource type="Texture2D" uid="uid://dr2xasamg0wg6" path="res://effects/spawn2.png" id="4_b7j7f"]
+[ext_resource type="Texture2D" uid="uid://csndnsn8ome62" path="res://effects/spawn3.png" id="5_r2bpo"]
+[ext_resource type="Texture2D" uid="uid://6j8mmmsxu3if" path="res://effects/spawn4.png" id="6_gvvp8"]
+[ext_resource type="Texture2D" uid="uid://cs5urmcgfhvbm" path="res://effects/spawn5.png" id="7_ru1v1"]
+[ext_resource type="Texture2D" uid="uid://dsyhaqnd05fq3" path="res://effects/spawn6.png" id="8_njgiq"]
+[ext_resource type="Texture2D" uid="uid://c13iry3k0nok0" path="res://effects/spawn7.png" id="9_lvi5h"]
+[ext_resource type="Texture2D" uid="uid://ca3q2lt64wiga" path="res://effects/spawn8.png" id="10_j3kdu"]
+[ext_resource type="Texture2D" uid="uid://cuugwvtdh687k" path="res://effects/spawn9.png" id="11_cb8gu"]
+[ext_resource type="Texture2D" uid="uid://uykno82ohgha" path="res://effects/spawn10.png" id="12_2hc2v"]
+[ext_resource type="Texture2D" uid="uid://ctfsoxqm768ea" path="res://effects/spawn11.png" id="13_mrwyk"]
+[ext_resource type="Texture2D" uid="uid://dv7c7p8a75x1m" path="res://effects/spawn12.png" id="14_8wyq0"]
+[ext_resource type="Texture2D" uid="uid://bi8hrw50jioeg" path="res://effects/spawn13.png" id="15_0tvvg"]
+[ext_resource type="Texture2D" uid="uid://cbk5x1g3578j5" path="res://effects/spawn14.png" id="16_o2kd6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hjvsp"]
 animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("3_x10bb")
+}, {
+"duration": 0.2,
+"texture": ExtResource("4_b7j7f")
+}, {
+"duration": 0.2,
+"texture": ExtResource("5_r2bpo")
+}, {
+"duration": 0.2,
+"texture": ExtResource("6_gvvp8")
+}, {
+"duration": 0.2,
+"texture": ExtResource("7_ru1v1")
+}, {
+"duration": 0.2,
+"texture": ExtResource("8_njgiq")
+}, {
+"duration": 0.2,
+"texture": ExtResource("9_lvi5h")
+}, {
+"duration": 0.2,
+"texture": ExtResource("10_j3kdu")
+}, {
+"duration": 0.2,
+"texture": ExtResource("11_cb8gu")
+}, {
+"duration": 0.2,
+"texture": ExtResource("12_2hc2v")
+}, {
+"duration": 0.2,
+"texture": ExtResource("13_mrwyk")
+}, {
+"duration": 0.2,
+"texture": ExtResource("14_8wyq0")
+}, {
+"duration": 0.2,
+"texture": ExtResource("15_0tvvg")
+}, {
+"duration": 0.2,
+"texture": ExtResource("16_o2kd6")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_yji4u")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walking",
 "speed": 5.0
 }]
 
@@ -29,6 +90,7 @@ stop_distance = 100
 texture_filter = 1
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_hjvsp")
+animation = &"walking"
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=303423707]
 

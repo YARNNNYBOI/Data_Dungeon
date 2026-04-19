@@ -108,7 +108,7 @@ rotation = 1.5707964
 [node name="Barriers1" parent="." unique_id=1310389624 groups=["walls"] instance=ExtResource("6_18igh")]
 position = Vector2(328, 264)
 
-[node name="enemy" parent="." unique_id=1072355191 instance=ExtResource("9_lugph")]
+[node name="enemy1" parent="." unique_id=1072355191 instance=ExtResource("9_lugph")]
 position = Vector2(274, 143)
 room_group = "1"
 

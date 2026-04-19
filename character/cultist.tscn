@@ -2,6 +2,20 @@
 
 [ext_resource type="Script" uid="uid://c73iylnw454xj" path="res://character/cultist.gd" id="1_xcf5m"]
 [ext_resource type="Texture2D" uid="uid://c2x3fp7artgu7" path="res://character/cultist.png" id="2_14kar"]
+[ext_resource type="Texture2D" uid="uid://dopweqdsi11w6" path="res://effects/spawn1.png" id="3_ouwlh"]
+[ext_resource type="Texture2D" uid="uid://dr2xasamg0wg6" path="res://effects/spawn2.png" id="4_xeivp"]
+[ext_resource type="Texture2D" uid="uid://csndnsn8ome62" path="res://effects/spawn3.png" id="5_sd0jm"]
+[ext_resource type="Texture2D" uid="uid://6j8mmmsxu3if" path="res://effects/spawn4.png" id="6_0bqfx"]
+[ext_resource type="Texture2D" uid="uid://cs5urmcgfhvbm" path="res://effects/spawn5.png" id="7_ma4sk"]
+[ext_resource type="Texture2D" uid="uid://dsyhaqnd05fq3" path="res://effects/spawn6.png" id="8_rvtpo"]
+[ext_resource type="Texture2D" uid="uid://c13iry3k0nok0" path="res://effects/spawn7.png" id="9_rqs2r"]
+[ext_resource type="Texture2D" uid="uid://ca3q2lt64wiga" path="res://effects/spawn8.png" id="10_a2548"]
+[ext_resource type="Texture2D" uid="uid://cuugwvtdh687k" path="res://effects/spawn9.png" id="11_xg3hv"]
+[ext_resource type="Texture2D" uid="uid://uykno82ohgha" path="res://effects/spawn10.png" id="12_4s7du"]
+[ext_resource type="Texture2D" uid="uid://ctfsoxqm768ea" path="res://effects/spawn11.png" id="13_cx5cx"]
+[ext_resource type="Texture2D" uid="uid://dv7c7p8a75x1m" path="res://effects/spawn12.png" id="14_3mkjd"]
+[ext_resource type="Texture2D" uid="uid://bi8hrw50jioeg" path="res://effects/spawn13.png" id="15_tko2q"]
+[ext_resource type="Texture2D" uid="uid://cbk5x1g3578j5" path="res://effects/spawn14.png" id="16_w3tey"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g0abi"]
 atlas = ExtResource("2_14kar")
@@ -10,11 +24,58 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_psivp"]
 animations = [{
 "frames": [{
+"duration": 0.2,
+"texture": ExtResource("3_ouwlh")
+}, {
+"duration": 0.2,
+"texture": ExtResource("4_xeivp")
+}, {
+"duration": 0.2,
+"texture": ExtResource("5_sd0jm")
+}, {
+"duration": 0.2,
+"texture": ExtResource("6_0bqfx")
+}, {
+"duration": 0.2,
+"texture": ExtResource("7_ma4sk")
+}, {
+"duration": 0.2,
+"texture": ExtResource("8_rvtpo")
+}, {
+"duration": 0.2,
+"texture": ExtResource("9_rqs2r")
+}, {
+"duration": 0.2,
+"texture": ExtResource("10_a2548")
+}, {
+"duration": 0.2,
+"texture": ExtResource("11_xg3hv")
+}, {
+"duration": 0.2,
+"texture": ExtResource("12_4s7du")
+}, {
+"duration": 0.2,
+"texture": ExtResource("13_cx5cx")
+}, {
+"duration": 0.2,
+"texture": ExtResource("14_3mkjd")
+}, {
+"duration": 0.2,
+"texture": ExtResource("15_tko2q")
+}, {
+"duration": 0.2,
+"texture": ExtResource("16_w3tey")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g0abi")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walking",
 "speed": 5.0
 }]
 
@@ -34,7 +95,7 @@ stop_distance = 80
 texture_filter = 1
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_psivp")
-frame_progress = 0.616925
+animation = &"walking"
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=2005417625]
 

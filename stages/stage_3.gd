@@ -100,24 +100,18 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_room_1_body_entered(body: Node2D) -> void:
 		if check_entered(body) and room1_enem.size() > 0:
 			for i in room1_enem:
-				i.set_process(true)
-				i.visible = true
-				i.chasing = true
+				i.play_spawn_effect()
 				place_barriers()
 
 
 func _on_room_2_body_entered(body: Node2D) -> void:
 		if check_entered(body) and room2_enem.size() > 0:
 			for i in room2_enem:
-				i.set_process(true)
-				i.visible = true
-				i.chasing = true
+				i.play_spawn_effect()
 				place_barriers()
 
 func _on_room_3_body_entered(body: Node2D) -> void:
 		if check_entered(body) and room3_enem.size() > 0:
 			for i in room3_enem:
-				i.set_process(true)
-				i.visible = true
-				i.chasing = true
+				i.play_spawn_effect()
 				place_barriers()

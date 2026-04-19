@@ -9,15 +9,29 @@
 [ext_resource type="Texture2D" uid="uid://b7aoaamo12lsh" path="res://character/animated_enemies/bouncing-goblin5.png" id="7_feri8"]
 [ext_resource type="Texture2D" uid="uid://dfd0tdd6i1am" path="res://character/animated_enemies/bouncing-goblin6.png" id="8_v3pno"]
 [ext_resource type="Texture2D" uid="uid://dudrsgbcfhkcf" path="res://character/animated_enemies/goblin_walk1.png" id="9_dotrn"]
+[ext_resource type="Texture2D" uid="uid://dopweqdsi11w6" path="res://effects/spawn1.png" id="9_qckvv"]
+[ext_resource type="Texture2D" uid="uid://dr2xasamg0wg6" path="res://effects/spawn2.png" id="10_abnfr"]
 [ext_resource type="Texture2D" uid="uid://cy3xk5h3vworr" path="res://character/animated_enemies/goblin_walk2.png" id="10_goccb"]
 [ext_resource type="Texture2D" uid="uid://dgndpqt51ng5q" path="res://character/animated_enemies/goblin_walk3.png" id="11_c6edy"]
+[ext_resource type="Texture2D" uid="uid://csndnsn8ome62" path="res://effects/spawn3.png" id="11_fh6c6"]
+[ext_resource type="Texture2D" uid="uid://6j8mmmsxu3if" path="res://effects/spawn4.png" id="12_ff73f"]
 [ext_resource type="Texture2D" uid="uid://icwph313hqed" path="res://character/animated_enemies/goblin_walk4.png" id="12_on87d"]
+[ext_resource type="Texture2D" uid="uid://cs5urmcgfhvbm" path="res://effects/spawn5.png" id="13_ecp7c"]
 [ext_resource type="Texture2D" uid="uid://cowferwybb1ms" path="res://character/animated_enemies/goblin_walk5.png" id="13_ussae"]
+[ext_resource type="Texture2D" uid="uid://dsyhaqnd05fq3" path="res://effects/spawn6.png" id="14_hjhqj"]
 [ext_resource type="Texture2D" uid="uid://b5jllhvlg4xao" path="res://character/animated_enemies/goblin_walk6.png" id="14_yuld7"]
+[ext_resource type="Texture2D" uid="uid://c13iry3k0nok0" path="res://effects/spawn7.png" id="15_e0dh8"]
 [ext_resource type="Texture2D" uid="uid://b5fxgnmfci5vn" path="res://character/animated_enemies/goblin_walk7.png" id="15_hmg7a"]
+[ext_resource type="Texture2D" uid="uid://ca3q2lt64wiga" path="res://effects/spawn8.png" id="16_a3xxd"]
 [ext_resource type="Texture2D" uid="uid://c3uohfie4fvu6" path="res://character/animated_enemies/goblin_walk8.png" id="16_i82jj"]
+[ext_resource type="Texture2D" uid="uid://cuugwvtdh687k" path="res://effects/spawn9.png" id="17_80jya"]
 [ext_resource type="Texture2D" uid="uid://trklcejlykl2" path="res://character/animated_enemies/goblin_walk9.png" id="17_ee27h"]
 [ext_resource type="Texture2D" uid="uid://dkd4roaav2jml" path="res://character/animated_enemies/goblin_walk10.png" id="18_ot814"]
+[ext_resource type="Texture2D" uid="uid://uykno82ohgha" path="res://effects/spawn10.png" id="18_uvfju"]
+[ext_resource type="Texture2D" uid="uid://ctfsoxqm768ea" path="res://effects/spawn11.png" id="19_ilxfx"]
+[ext_resource type="Texture2D" uid="uid://dv7c7p8a75x1m" path="res://effects/spawn12.png" id="20_4urk3"]
+[ext_resource type="Texture2D" uid="uid://bi8hrw50jioeg" path="res://effects/spawn13.png" id="21_u8dcm"]
+[ext_resource type="Texture2D" uid="uid://cbk5x1g3578j5" path="res://effects/spawn14.png" id="22_57qtv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nv07g"]
 animations = [{
@@ -43,6 +57,53 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("9_qckvv")
+}, {
+"duration": 0.2,
+"texture": ExtResource("10_abnfr")
+}, {
+"duration": 0.2,
+"texture": ExtResource("11_fh6c6")
+}, {
+"duration": 0.2,
+"texture": ExtResource("12_ff73f")
+}, {
+"duration": 0.2,
+"texture": ExtResource("13_ecp7c")
+}, {
+"duration": 0.2,
+"texture": ExtResource("14_hjhqj")
+}, {
+"duration": 0.2,
+"texture": ExtResource("15_e0dh8")
+}, {
+"duration": 0.2,
+"texture": ExtResource("16_a3xxd")
+}, {
+"duration": 0.2,
+"texture": ExtResource("17_80jya")
+}, {
+"duration": 0.2,
+"texture": ExtResource("18_uvfju")
+}, {
+"duration": 0.2,
+"texture": ExtResource("19_ilxfx")
+}, {
+"duration": 0.2,
+"texture": ExtResource("20_4urk3")
+}, {
+"duration": 0.2,
+"texture": ExtResource("21_u8dcm")
+}, {
+"duration": 0.2,
+"texture": ExtResource("22_57qtv")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -96,8 +157,9 @@ script = ExtResource("1_4l07s")
 texture_filter = 1
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_nv07g")
-animation = &"walking"
-frame_progress = 0.43042928
+animation = &"spawn"
+frame = 13
+frame_progress = 1.0
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=1378576910]
 

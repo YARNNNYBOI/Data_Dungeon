@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var color_timer: Timer = $color_timer
 @onready var throwing_timer: Timer = $throwing_timer
 
+@onready var is_spawning = false
+
 @onready var goo_instance = preload("res://character/abilities/ghost_goo.tscn")
 
 @export var stage = 2
@@ -46,7 +48,7 @@ func _process(delta: float) -> void:
 
 	# Reduce knockback gradually
 	if knockback_velocity.length() > 0:
-		enemy_sprite.play("idle")
+		enemy_sprite.play("walking")
 		is_knockedback = true
 		var decay = knockback_decay * delta
 		if knockback_velocity.length() <= decay:
@@ -81,6 +83,22 @@ func check_status():
 		GlobalScript.room1enemies += 1
 		queue_free()
 
+func play_spawn_effect():
+	print("here")
+	visible = true
+	is_spawning = true
+	chasing = false
+
+	if enemy_sprite.sprite_frames.has_animation("spawn"):
+		print("spawning")
+		enemy_sprite.play("spawn")
+		await enemy_sprite.animation_finished
+	else:
+		print("no animation sadly")
+
+	is_spawning = false
+	chasing = true
+	set_process(true) # ← ONLY enable after spawn
 
 func _on_timer_timeout() -> void:
 	enemy_sprite.modulate = Color(1, 1, 1, 1)
