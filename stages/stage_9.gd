@@ -79,17 +79,16 @@ func _process(delta: float) -> void:
 			room3clear = true
 			remove_barriers()
 			
-		room4_enem = room4_enem.filter(func(n):
-			return is_instance_valid(n)
-			)
-			
 		if room4_enem.size() == 0 and !room4clear:
 			print("Clear")
 			room4clear = true
 			remove_barriers()
 			chest_2.show_chest()
 
-
+		room4_enem = room4_enem.filter(func(n):
+			return is_instance_valid(n)
+			)
+			
 func check_entered(body):
 	if body.is_in_group("players"):  # optional filter
 		return true

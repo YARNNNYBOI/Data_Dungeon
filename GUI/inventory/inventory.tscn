@@ -2,10 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cpnufslxb0to1" path="res://GUI/inventory/inventoryui.png" id="1_khxb8"]
 [ext_resource type="Script" uid="uid://csu4vrvraa43e" path="res://GUI/inventory/inventory.gd" id="1_quatq"]
+[ext_resource type="Texture2D" uid="uid://ub2r41g0s2ko" path="res://GUI/inventory/artifact_name_display.png" id="2_5emqn"]
 [ext_resource type="Script" uid="uid://byddkt67ftjxn" path="res://slot.gd" id="2_quatq"]
 [ext_resource type="Texture2D" uid="uid://0f7fnqkosjbb" path="res://items/artifacts/artifact1.png" id="3_s2dgt"]
 [ext_resource type="Texture2D" uid="uid://6pv7ydddvf1e" path="res://GUI/inventory/tableui.png" id="4_5emqn"]
 [ext_resource type="Script" uid="uid://b57t0y63h7gjv" path="res://table_slot.gd" id="6_s2dgt"]
+[ext_resource type="Texture2D" uid="uid://oy3vs8e4ywyv" path="res://GUI/inventory/type_name_display.png" id="8_k2qkm"]
 
 [node name="inventory" type="Control" unique_id=1714270003]
 layout_mode = 3
@@ -16,13 +18,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_quatq")
 
+[node name="artifact_name" type="TextureRect" parent="." unique_id=22399129]
+texture_filter = 1
+layout_mode = 0
+offset_left = 198.0
+offset_top = 354.0
+offset_right = 966.0
+offset_bottom = 470.0
+texture = ExtResource("2_5emqn")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="artifact_name" unique_id=32916654]
+z_index = 1
+layout_mode = 0
+offset_left = 51.0
+offset_top = 24.0
+offset_right = 592.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
 [node name="player_inventory" type="TextureRect" parent="." unique_id=1363731982]
 texture_filter = 1
 layout_mode = 1
-offset_left = 169.00002
-offset_top = 441.00003
-offset_right = 332.0
-offset_bottom = 475.00003
+offset_left = 170.0
+offset_top = 458.00003
+offset_right = 333.0
+offset_bottom = 492.00003
 scale = Vector2(5, 5)
 texture = ExtResource("1_khxb8")
 
@@ -212,10 +234,10 @@ script = ExtResource("2_quatq")
 [node name="table_inventory" type="TextureRect" parent="." unique_id=138885169]
 texture_filter = 1
 layout_mode = 0
-offset_left = 373.00003
-offset_top = 120.0
-offset_right = 456.00003
-offset_bottom = 168.0
+offset_left = 372.00003
+offset_top = 103.0
+offset_right = 455.00003
+offset_bottom = 151.0
 scale = Vector2(5, 5)
 texture = ExtResource("4_5emqn")
 
@@ -315,10 +337,50 @@ script = ExtResource("6_s2dgt")
 
 [node name="Button" type="Button" parent="." unique_id=570356235]
 layout_mode = 0
-offset_left = 508.0
-offset_top = 297.0
-offset_right = 648.0
-offset_bottom = 336.0
-text = "PRESSSO MEE"
+offset_left = 513.0
+offset_top = 283.0
+offset_right = 653.0
+offset_bottom = 322.0
+text = "SUBMIT"
 
+[node name="type_display" type="TextureRect" parent="." unique_id=1909862069]
+texture_filter = 1
+layout_mode = 0
+offset_left = 341.0
+offset_top = 15.0
+offset_right = 821.0
+offset_bottom = 111.0
+texture = ExtResource("8_k2qkm")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="type_display" unique_id=73427744]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 26.0
+offset_right = 431.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 20
+text = "Type"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="player_inventory/pi_1" to="." method="_on_pi_1_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_2" to="." method="_on_pi_2_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_3" to="." method="_on_pi_3_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_4" to="." method="_on_pi_4_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_5" to="." method="_on_pi_5_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_6" to="." method="_on_pi_6_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_7" to="." method="_on_pi_7_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_8" to="." method="_on_pi_8_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_9" to="." method="_on_pi_9_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_10" to="." method="_on_pi_10_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_11" to="." method="_on_pi_11_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_12" to="." method="_on_pi_12_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_13" to="." method="_on_pi_13_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_14" to="." method="_on_pi_14_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_15" to="." method="_on_pi_15_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_16" to="." method="_on_pi_16_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_17" to="." method="_on_pi_17_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_18" to="." method="_on_pi_18_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_19" to="." method="_on_pi_19_mouse_entered"]
+[connection signal="mouse_entered" from="player_inventory/pi_20" to="." method="_on_pi_20_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

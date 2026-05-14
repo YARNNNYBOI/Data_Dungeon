@@ -134,7 +134,7 @@ expand_mode = 5
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 124.0
-offset_top = 221.0
+offset_top = 276.0
 offset_right = 858.0
 offset_bottom = 563.0
 theme_override_font_sizes/font_size = 20
@@ -153,6 +153,15 @@ text = "asd"
 horizontal_alignment = 1
 autowrap_mode = 1
 autowrap_trim_flags = 0
+
+[node name="Type" type="Label" parent="CanvasLayer/Info_Screen/ColorRect" unique_id=352454287]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 200.0
+offset_right = 280.0
+offset_bottom = 264.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
 
 [node name="Button1" type="Button" parent="CanvasLayer/Info_Screen" unique_id=1458968115]
 layout_mode = 0

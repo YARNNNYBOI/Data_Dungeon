@@ -11,10 +11,11 @@ extends Area2D
 @export var artifact_position : Vector2
 @export var artifact_texture : CompressedTexture2D
 @export var quanorquan : String
-@export var size : Vector2
+@export var size = Vector2(0.5, 0.5)
 
 @export var title_text : String
 @export var description_text : String
+@export var type_text : String
 
 var artifact_instance : Node2D
 
@@ -38,7 +39,8 @@ func _process(delta: float) -> void:
 				artifact_instance.qualorquan = quanorquan
 				artifact_instance.title_text = title_text
 				artifact_instance.description_text = description_text
-				artifact_instance.get_node("Sprite2D").z_index = 0
+				artifact_instance.type_text = type_text
+				artifact_instance.get_node("Sprite2D").z_index = 1
 				artifact_instance.get_node("Sprite2D").texture = artifact_texture
 				artifact_instance.global_position = Vector2(global_position.x, global_position.y + 30)
 				get_tree().current_scene.add_child(artifact_instance)

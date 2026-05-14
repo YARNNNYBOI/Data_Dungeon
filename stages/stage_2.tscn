@@ -473,13 +473,13 @@ position = Vector2(176, 56)
 
 [node name="Chest" parent="." unique_id=1775483302 instance=ExtResource("8_013ri")]
 position = Vector2(552, -264)
-artifact_name = "Artifact_2"
+artifact_name = "Statistical Compass"
 artifact_position = Vector2(904, -240)
 artifact_texture = ExtResource("9_jvs2s")
 quanorquan = "quan"
-size = Vector2(0.5, 0.5)
 title_text = "Statistical Compass"
 description_text = "A tool used to analyze relationships between variables and identify patterns using statistical models."
+type_text = "Quantitative"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=170948968]
 
@@ -561,11 +561,12 @@ room_group = "2"
 
 [node name="Chest2" parent="." unique_id=16341853 instance=ExtResource("8_013ri")]
 position = Vector2(888, -264)
+artifact_name = "Discrete Data Tablet"
 artifact_texture = ExtResource("14_ove85")
 quanorquan = "quan"
-size = Vector2(0.5, 0.5)
 title_text = "Discrete Data Tablet"
 description_text = "An artifact representing countable numerical data such as the number of students passing an exam"
+type_text = "Quantitative"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="room1" to="." method="_on_room_1_body_entered"]

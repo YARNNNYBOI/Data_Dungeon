@@ -39,3 +39,7 @@ func _gui_input(event):
 	var parent = get_parent().get_parent()
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		whichTableIsSelected()
+
+
+func _on_mouse_entered() -> void:
+	print(self.name)

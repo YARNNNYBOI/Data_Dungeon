@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var enemy_sprite: AnimatedSprite2D = $enemy_sprite
 @onready var color_timer: Timer = $color_timer
 
+@onready var hasSpawned = false
+
 @export var stage = 2
 @export var stop_distance = 20
 @export var health = 100
@@ -77,15 +79,15 @@ func damage_effect():
 var is_spawning = false
 
 func play_spawn_effect():
-	print("here")
 	visible = true
 	is_spawning = true
 	chasing = false
 
-	if enemy_sprite.sprite_frames.has_animation("spawn"):
+	if enemy_sprite.sprite_frames.has_animation("spawn") and !hasSpawned:
 		print("spawning")
 		enemy_sprite.play("spawn")
 		await enemy_sprite.animation_finished
+		hasSpawned = true
 	else:
 		print("no animation sadly")
 

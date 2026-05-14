@@ -256,15 +256,6 @@ position = Vector2(327.99997, 272.00003)
 position = Vector2(999, 907)
 shape = SubResource("RectangleShape2D_ygorx")
 
-[node name="Chest" parent="." unique_id=1775483302 instance=ExtResource("6_sg1oo")]
-position = Vector2(664, 600)
-artifact_name = "Artifact_3"
-artifact_texture = ExtResource("7_65daf")
-quanorquan = "quan"
-size = Vector2(0.5, 0.5)
-title_text = "Continuous Data Crystal"
-description_text = "A crystal symbolizing measurable values that can take any number within a range, such as height or weight"
-
 [node name="Barriers1" parent="." unique_id=1107646465 instance=ExtResource("7_2i156")]
 position = Vector2(328, 509)
 
@@ -317,12 +308,22 @@ room_group = "2"
 position = Vector2(1033, 613)
 room_group = "3"
 
+[node name="Chest" parent="." unique_id=1775483302 instance=ExtResource("6_sg1oo")]
+position = Vector2(664, 600)
+artifact_name = "Continuous Data Crystal"
+artifact_texture = ExtResource("7_65daf")
+quanorquan = "quan"
+title_text = "Continuous Data Crystal"
+description_text = "A crystal symbolizing measurable values that can take any number within a range, such as height or weight"
+type_text = "Quantitative"
+
 [node name="Chest2" parent="." unique_id=1526953485 instance=ExtResource("6_sg1oo")]
 position = Vector2(1000, 600)
+artifact_name = "Ratio Scale Core"
 artifact_texture = ExtResource("10_m2537")
-size = Vector2(0.5, 0.5)
 title_text = "Ratio Scale Core"
 description_text = "A relic representing ratio data with a true zero value, allowing meaningful comparisons such as income or age"
+type_text = "Quantitative"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="room1" to="." method="_on_room_1_body_entered"]

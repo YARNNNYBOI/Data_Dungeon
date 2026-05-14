@@ -681,12 +681,12 @@ layer_0/tile_data = PackedInt32Array(524300, 589834, 0, 589836, 589834, 1, 65537
 
 [node name="Chest" parent="." unique_id=1775483302 instance=ExtResource("6_ldidj")]
 position = Vector2(104, -96)
-artifact_name = "Artifact_5"
+artifact_name = "Correlation Analyzer"
 artifact_texture = ExtResource("14_xwukc")
 quanorquan = "qual"
-size = Vector2(0.5, 0.5)
 title_text = "Correlation Analyzer"
 description_text = "A device used to identify statistical relationships between two or more variables"
+type_text = "Quantitative"
 
 [node name="player" parent="." unique_id=1556820961 instance=ExtResource("7_8ith5")]
 position = Vector2(104, 240)
@@ -752,11 +752,12 @@ room_group = "3"
 
 [node name="Chest2" parent="." unique_id=2116931075 instance=ExtResource("6_ldidj")]
 position = Vector2(744, -104)
+artifact_name = "Longitudinal Archive"
 artifact_texture = ExtResource("18_hehp2")
 quanorquan = "quan"
-size = Vector2(0.5, 0.5)
 title_text = "Longitudinal Archive"
 description_text = "A collection of numerical data gathered from the same participants over time to observe trends and changes"
+type_text = "Quantitative"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="room1" to="." method="_on_room_1_body_entered"]

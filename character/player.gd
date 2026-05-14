@@ -12,6 +12,7 @@ extends CharacterBody2D
 
 @onready var description_text: Label = $CanvasLayer/Info_Screen/ColorRect/description_text
 @onready var title_text: Label = $CanvasLayer/Info_Screen/ColorRect/Title
+@onready var type_text: Label = $CanvasLayer/Info_Screen/ColorRect/Type
 
 @onready var death_screen: Control = $"CanvasLayer/Death Screen"
 @onready var gui: Control = $CanvasLayer/GUI
@@ -266,10 +267,11 @@ func toggle_inventory():
 # UI EVENTS
 # ==================================================
 
-func show_info_screen(title, description):
+func show_info_screen(title, description, text_type):
 
 	title_text.text = title
 	description_text.text = description
+	type_text.text = text_type
 	info_screen.visible = true
 	GlobalScript.can_move = false
 	

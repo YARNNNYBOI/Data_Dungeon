@@ -648,12 +648,12 @@ layer_0/tile_data = PackedInt32Array(524300, 9, 0, 589836, 9, 0, 655372, 9, 0, 7
 
 [node name="Chest" parent="." unique_id=1775483302 instance=ExtResource("6_aoydv")]
 position = Vector2(104, -104)
-artifact_name = "Artifact_4"
+artifact_name = "Survey Engine"
 artifact_texture = ExtResource("13_p83on")
 quanorquan = "qual"
-size = Vector2(0.5, 0.5)
 title_text = "Survey Engine"
 description_text = "A structured research tool used to collect measurable responses using closed-ended questionnaires"
+type_text = "Quantitative"
 
 [node name="player" parent="." unique_id=1556820961 instance=ExtResource("7_k8rir")]
 position = Vector2(104, 232)
@@ -734,11 +734,12 @@ shape = SubResource("RectangleShape2D_jbcrb")
 
 [node name="Chest2" parent="." unique_id=1624587082 instance=ExtResource("6_aoydv")]
 position = Vector2(744, 232)
+artifact_name = "Experimental Catalyst"
 artifact_texture = ExtResource("17_643oa")
 quanorquan = "quan"
-size = Vector2(0.5, 0.5)
 title_text = "Experimental Catalyst"
 description_text = "An artifact representing controlled experiments used to determine cause-and-effect relationships"
+type_text = "Quantitative"
 
 [connection signal="body_entered" from="room4" to="." method="_on_room_4_body_entered"]
 [connection signal="body_entered" from="room3" to="." method="_on_room_3_body_entered"]

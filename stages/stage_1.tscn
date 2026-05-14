@@ -126,13 +126,13 @@ room_group = "2"
 
 [node name="Chest" parent="." unique_id=1775483302 instance=ExtResource("11_18igh")]
 position = Vector2(328, 168)
-artifact_name = "Artifact_1"
+artifact_name = "Artifact of Measurement"
 artifact_position = Vector2(664, 192)
 artifact_texture = ExtResource("11_p7cgj")
 quanorquan = "quan"
-size = Vector2(0.5, 0.5)
 title_text = "Artifact of Measurement"
 description_text = "A relic representing the measurement of variables through numerical data such as counts, quantities, and statistical values."
+type_text = "Quantitative"
 
 [node name="nextstage" type="Area2D" parent="." unique_id=2135841868]
 
@@ -151,11 +151,12 @@ position = Vector2(600, 104)
 
 [node name="Chest2" parent="." unique_id=668074560 instance=ExtResource("11_18igh")]
 position = Vector2(664, 168)
+artifact_name = "Hypothesis Testing Relic"
 artifact_texture = ExtResource("13_43q35")
 quanorquan = "quan"
-size = Vector2(0.5, 0.5)
 title_text = "Hypothesis Testing Relic"
 description_text = "A research artifact used to test hypotheses through statistical analysis and empirical data"
+type_text = "Quantitative"
 
 [connection signal="body_entered" from="room2" to="." method="_on_room_2_body_entered"]
 [connection signal="body_entered" from="room1" to="." method="_on_area_2d_body_entered"]

@@ -69,10 +69,10 @@ layer_0/tile_data = PackedInt32Array(-131074, 65537, 0, -131073, 1, 0, 65534, 65
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1162980642]
 z_index = -4
-offset_left = -1264.0
-offset_top = -832.0
-offset_right = 1368.0
-offset_bottom = 1208.0
+offset_left = -1256.0
+offset_top = -600.0
+offset_right = 1376.0
+offset_bottom = 1440.0
 color = Color(0, 0, 0.14117648, 1)
 
 [node name="player" parent="." unique_id=1556820961 instance=ExtResource("5_dpmqb")]
@@ -119,7 +119,7 @@ position = Vector2(88, 408)
 rotation = 1.5707964
 
 [node name="Barriers11" parent="." unique_id=341628968 instance=ExtResource("6_ite7n")]
-position = Vector2(-96, -56)
+position = Vector2(-72, -56)
 
 [node name="gate1" type="Area2D" parent="." unique_id=708186877]
 

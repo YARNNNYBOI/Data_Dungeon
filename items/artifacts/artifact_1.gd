@@ -10,6 +10,7 @@ class_name artifact
 @export var qualorquan : String
 @export var title_text : String
 @export var description_text : String
+@export var type_text : String
 @export var size : Vector2
 
 @onready var player
@@ -50,7 +51,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func check_body(body:Node2D):
 	if body.is_in_group("players"):
 		if body.has_method("show_info_screen"):
-			body.show_info_screen(title_text, description_text)
+			body.show_info_screen(title_text, description_text, type_text)
 	
 func get_item_group() -> String:
 	return qualorquan

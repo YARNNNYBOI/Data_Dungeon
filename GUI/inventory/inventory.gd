@@ -3,10 +3,34 @@ extends Control
 @onready var temp_player_inventory = {}
 @onready var player_inventory: TextureRect = $player_inventory
 @onready var table_inventory: TextureRect = $table_inventory
+@onready var label: Label = $artifact_name/Label
+@onready var label2: Label = $type_display/Label
 
 # key : name { path : ##, type: ## }
 @onready var table1 = {}
 @onready var table2 = {}
+
+
+@onready var p = [$player_inventory/pi_1, 
+				$player_inventory/pi_2, 
+				$player_inventory/pi_3, 
+				$player_inventory/pi_4, 
+				$player_inventory/pi_5, 
+				$player_inventory/pi_6, 
+				$player_inventory/pi_7, 
+				$player_inventory/pi_8, 
+				$player_inventory/pi_9, 
+				$player_inventory/pi_10, 
+				$player_inventory/pi_11, 
+				$player_inventory/pi_12, 
+				$player_inventory/pi_13, 
+				$player_inventory/pi_14, 
+				$player_inventory/pi_15, 
+				$player_inventory/pi_16, 
+				$player_inventory/pi_17, 
+				$player_inventory/pi_18, 
+				$player_inventory/pi_19, 
+				$player_inventory/pi_20]
 
 
 func _ready() -> void:
@@ -64,6 +88,7 @@ func findWhichTable():
 
 	if GlobalScript.isTableOneSelected:
 		print("table 1 is selected")
+		label2.text = "Qualitative"
 		for key in table1:
 			if key == null:
 				print("nothing")
@@ -71,6 +96,7 @@ func findWhichTable():
 				placeArtifactOntableSlot(table1, key)
 	else:
 		print("table 2 is selected")
+		label2.text = "Quantitative"
 		for key in table2:
 			if key == null:
 				print("nothing")
@@ -138,3 +164,88 @@ func _on_button_pressed() -> void:
 				continue
 		else:
 			print("no type")
+
+
+func get_artifact_name(number):
+	if p[int(number)].artifact_name != "":
+		label.text = p[int(number)].artifact_name
+	else:
+		label.text = ""
+
+func _on_pi_1_mouse_entered() -> void:
+	get_artifact_name(0)
+
+
+func _on_pi_2_mouse_entered() -> void:
+	get_artifact_name(1)
+
+
+func _on_pi_3_mouse_entered() -> void:
+	get_artifact_name(2)
+
+
+func _on_pi_4_mouse_entered() -> void:
+	get_artifact_name(3)
+
+
+func _on_pi_5_mouse_entered() -> void:
+	get_artifact_name(4)
+
+
+func _on_pi_6_mouse_entered() -> void:
+	get_artifact_name(5)
+
+
+func _on_pi_7_mouse_entered() -> void:
+	get_artifact_name(6)
+
+
+func _on_pi_8_mouse_entered() -> void:
+	get_artifact_name(7)
+
+
+func _on_pi_9_mouse_entered() -> void:
+	get_artifact_name(8)
+
+
+func _on_pi_10_mouse_entered() -> void:
+	get_artifact_name(9)
+
+
+func _on_pi_11_mouse_entered() -> void:
+	get_artifact_name(10)
+
+func _on_pi_12_mouse_entered() -> void:
+	get_artifact_name(11)
+
+
+func _on_pi_13_mouse_entered() -> void:
+	get_artifact_name(12)
+
+
+func _on_pi_14_mouse_entered() -> void:
+	get_artifact_name(13)
+
+
+func _on_pi_15_mouse_entered() -> void:
+	get_artifact_name(14)
+
+
+func _on_pi_16_mouse_entered() -> void:
+	get_artifact_name(15)
+
+
+func _on_pi_17_mouse_entered() -> void:
+	get_artifact_name(16)
+
+
+func _on_pi_18_mouse_entered() -> void:
+	get_artifact_name(17)
+
+
+func _on_pi_19_mouse_entered() -> void:
+	get_artifact_name(18)
+
+
+func _on_pi_20_mouse_entered() -> void:
+	get_artifact_name(19)
