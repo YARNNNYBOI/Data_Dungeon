@@ -321,6 +321,7 @@ type_text = "Quantitative"
 position = Vector2(1000, 600)
 artifact_name = "Ratio Scale Core"
 artifact_texture = ExtResource("10_m2537")
+quanorquan = "quan"
 title_text = "Ratio Scale Core"
 description_text = "A relic representing ratio data with a true zero value, allowing meaningful comparisons such as income or age"
 type_text = "Quantitative"
